@@ -21,9 +21,9 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-file"></i> <span> Bài viết </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="add-post.php">Thêm bài viết</a></li>
-                                    <li><a href="manage-posts.php">Quản lý bài viết</a></li>
-                                    <li><a href="trash-posts.php">Bài viết bị xóa</a></li>
+                                    <li><a href="index.php?c=Post&a=Add">Thêm bài viết</a></li>
+                                    <li><a href="index.php?c=Post&a=Manage">Quản lý bài viết</a></li>
+                                    <li><a href="index.php?c=Post&a=Trash">Bài viết bị xóa</a></li>
                                 </ul>
                             </li>
 
