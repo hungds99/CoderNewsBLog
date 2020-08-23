@@ -66,16 +66,43 @@
                     header("location: index.php?c=Post&a=Edit&id=$postid&s=true");
             }
 
-            if(isset($_POST['submit'])) {
-                $categoryName = $_POST['category'];
-                $description = $_POST['description'];
-                $status = 1;
-                $this->categoryModel->AddCategory($categoryName, $description, $status);
-                header("location: index.php?c=Category&a=Add&s=true");
+           // For adding post  
+            if (isset($_POST['submit'])) {
+                
+                $posttitle = $_POST['posttitle'];
+                $catid = $_POST['category'];
+                $postdetails = $_POST['postdescription'];
+                
+                $arr = explode(" ", $posttitle);
+                $url = implode("-", $arr);
+                $imgfile = $_FILES["postimage"]["name"];
+
+                // get the image extension
+                $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
+                // allowed extensions
+                $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
+                // Validation for allowed extensions .in_array() function searches an array for a specific value.
+                if (!in_array($extension, $allowed_extensions)) {
+                    echo "<script>alert('Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
+                } else {
+                    //rename the image file
+                    $imgnewfile = md5($imgfile) . $extension;
+                    // Code for move image into directory
+                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "assets/images/posts/" . $imgnewfile);
+
+                    $status = 1;
+                    $result = $this->postModel->AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile);
+                    if ($result == 1) {
+                        header("location: index.php?c=Post&a=Add&s=true");
+                    } else {
+                        header("location: index.php?c=Post&a=Add&e=true");
+                    }
+                }
             }
         }
 
         function Add() {
-            require_once SYSTEM_PATH."/View/Admin/Add-Category.php";
+            $categories = $this->categoryModel->GetCategories();
+            require_once SYSTEM_PATH."/View/Admin/Add-Post.php";
         }
     }

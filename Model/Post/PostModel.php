@@ -45,4 +45,14 @@
             $query = "UPDATE tblposts SET PostTitle='$posttitle',CategoryId='$catid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status' where id='$postid'";
             $result = mysqli_query($this->conn, $query);
         }
+
+        function AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile) {
+            $query = "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values(n'$posttitle','$catid','$postdetails','$url','$status','$imgnewfile')";
+            $result = mysqli_query($this->conn, $query);
+            if($result) {
+                return 1;
+            } else {
+                return 2;
+            }
+        }
     }
