@@ -38,8 +38,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-comment"></i> <span> Bình luận </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="unapprove-comment.php"> Bình luận đang chờ </a></li>
-                                    <li><a href="manage-comments.php"> Bình luận được xác nhận</a></li>
+                                    <li><a href="index.php?c=Comment&a=Disapprove"> Bình luận đang chờ </a></li>
+                                    <li><a href="index.php?c=Comment&a=Approve"> Bình luận được xác nhận</a></li>
                                 </ul>
                             </li>
 
