@@ -26,19 +26,24 @@
             }
         }
 
+        function Trash() {
+            $posts = $this->postModel->GetTrashPosts();
+            require_once SYSTEM_PATH."/View/Admin/Trash-Posts.php";
+        }
+
         function Restore(){
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
-                $this->categoryModel->RestoreCategory($id);
-                header("location: index.php?c=Category&a=Manage&s=true");
+                $this->postModel->RestorePost($id);
+                header("location: index.php?c=Post&a=Trash&s=true");
             }
         }
 
         function ForceDel() {
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
-                $this->categoryModel->ForceDeleteCategory($id);
-                header("location: index.php?c=Category&a=Manage&s=true");
+                $this->postModel->ForceDeletePost($id);
+                header("location: index.php?c=Post&a=Trash&s=true");
             }
         }
 
@@ -52,6 +57,7 @@
         }
 
         function Save() {
+            // Cập nhật bài viết
             if (isset($_POST['update']) && isset($_GET['id'])) {
                     $posttitle = $_POST['posttitle'];
                     $catid = $_POST['category'];
@@ -66,7 +72,7 @@
                     header("location: index.php?c=Post&a=Edit&id=$postid&s=true");
             }
 
-           // For adding post  
+           // Thêm bài viết mới  
             if (isset($_POST['submit'])) {
                 
                 $posttitle = $_POST['posttitle'];
@@ -77,21 +83,25 @@
                 $url = implode("-", $arr);
                 $imgfile = $_FILES["postimage"]["name"];
 
-                // get the image extension
+                // Lấy đuôi hình ảnh
                 $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
-                // allowed extensions
+                
+                // Các đuôi được chấp thuận 
                 $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
-                // Validation for allowed extensions .in_array() function searches an array for a specific value.
+
+                // Xác thực hình ảnh
                 if (!in_array($extension, $allowed_extensions)) {
-                    echo "<script>alert('Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
+                    echo "<script>alert('Định dạng không phù hợp. Chỉ cho phép jpg / jpeg/ png /gif');</script>";
                 } else {
-                    //rename the image file
+                    // Đổi tên hình ảnh
                     $imgnewfile = md5($imgfile) . $extension;
-                    // Code for move image into directory
+
+                    // Lưu hình ảnh vào thư mục
                     move_uploaded_file($_FILES["postimage"]["tmp_name"], "assets/images/posts/" . $imgnewfile);
 
                     $status = 1;
                     $result = $this->postModel->AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile);
+                    
                     if ($result == 1) {
                         header("location: index.php?c=Post&a=Add&s=true");
                     } else {
@@ -104,5 +114,46 @@
         function Add() {
             $categories = $this->categoryModel->GetCategories();
             require_once SYSTEM_PATH."/View/Admin/Add-Post.php";
+        }
+
+        function ChangeImage() {
+            if(isset($_GET['id'])) {
+                $postid = $_GET['id'];
+                $postImage = $this->postModel->GetImage($postid);
+                require_once SYSTEM_PATH."/View/Admin/Change-Image.php";
+            }
+        }
+
+        function SaveImage() {
+            if (isset($_POST['update'])) {
+
+                $imgfile = $_FILES["postimage"]["name"];
+        
+                // Lấy đuôi hình ảnh
+                $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
+        
+                // Các đuôi được chấp thuận 
+                $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
+        
+                // Các đuôi được chấp thuận 
+                if (!in_array($extension, $allowed_extensions)) {
+                    echo "<script>alert('Định dạng không phù hợp. Chỉ cho phép jpg / jpeg/ png /gif');</script>";
+                } else {
+                    // Đổi tên hình ảnh
+                    $imgnewfile = md5($imgfile) . $extension;
+
+                    // Lưu hình ảnh vào thư mục
+                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "assets/images/posts/" . $imgnewfile);
+        
+                    $postid = intval($_GET['id']);
+                    $result = $this->postModel->ChangeImage($imgnewfile, $postid);
+
+                    if ($result == 1) {
+                        header("location: index.php?c=Post&a=ChangeImage&id=$postid&s=true");
+                    } else {
+                        header("location: index.php?c=Post&a=ChangeImage&id=$postid&e=true");
+                    }
+                }
+            }
         }
     }

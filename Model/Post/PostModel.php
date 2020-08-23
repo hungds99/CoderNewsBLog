@@ -25,7 +25,7 @@
         }
 
         function GetPosts() {
-            $query = "SELECT tblposts.id As postid,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ";
+            $query = "SELECT tblposts.id As postid,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -55,4 +55,37 @@
                 return 2;
             }
         }
+
+        function GetTrashPosts() {
+            $query = "SELECT tblposts.id As postid,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=0";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function RestorePost($postid) {
+            $query = "UPDATE tblposts SET Is_Active=1 WHERE id='$postid'";
+            $result = mysqli_query($this->conn, $query);
+        }
+
+        function ForceDeletePost($postid) {
+            $query = "DELETE FROM tblposts WHERE id='$postid'";
+            $result = mysqli_query($this->conn, $query);
+        }
+
+        function GetImage($postid) {
+            $query = "SELECT PostImage,PostTitle FROM tblposts WHERE id='$postid' AND Is_Active=1";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function ChangeImage($imageurl, $postid) {
+            $query = "UPDATE tblposts SET PostImage='$imageurl' WHERE id='$postid'";
+            $result = mysqli_query($this->conn, $query);
+            if ($result) {
+                return 1;
+            } else {
+                return 2;
+            }
+        }
+
     }
