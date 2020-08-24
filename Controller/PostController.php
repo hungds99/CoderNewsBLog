@@ -156,4 +156,9 @@
                 }
             }
         }
+
+        function postByCategory(){
+
+            require_once SYSTEM_PATH."/View/Post/postbycategory.php";
+        }
     }
