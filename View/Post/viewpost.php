@@ -310,6 +310,12 @@
                         <!-- comment -->
                         
                         <textarea class="comment-area" name="" id="comment-area" ></textarea>
+
+                        <div class="form-group form-inline">
+                            <input type="text" class="form-control cmt_name" id="cmt_name" placeholder="Nhập tên*">
+                            <input type="text" class="form-control cmt_email" id="cmt_email" placeholder="Nhập Email*">
+                        </div>
+
                         <button class="btn btn-danger" id="btn-addcoment">Post Comment</button>
 
                         <!-- end comment -->
@@ -323,7 +329,10 @@
                                     <div class="pic">
                                         <img src="Assets/images/users/avatar-1.jpg" alt="">
                                     </div>
-                                    <div class="comment-text">Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit</div>
+                                    <div class="comment-text">
+                                        <h4><Strong>Hoangvu</Strong></h4>
+                                        <p>Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit</p>
+                                    </div>
                                 </div>
 
                             </div>

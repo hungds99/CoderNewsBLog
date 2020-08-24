@@ -241,14 +241,22 @@ body{
     margin-bottom: 20px;
 }
 .comments .pic {
-    width: 30%;
+    width: 15%;
     height: 100%;
+}
+.comments .comment-text{
+    padding-left: 20px;
 }
 .comments img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
    
+}
+.cmt_name , .cmt_email{
+    margin-right: 20px;
+    width:300px !important;
+
 }
 
 .footer {
