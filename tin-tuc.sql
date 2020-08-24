@@ -29,11 +29,11 @@ CREATE TABLE `tblcategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `tblcategory` (`id`, `CategoryName`, `Description`, `PostingDate`, `UpdationDate`, `Is_Active`) VALUES
-(2, 'Java', 'Java, java core, java 8', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
-(3, 'Spring', 'Spring, framework, mvc, core, cloud', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
-(5, 'Database', 'Mysql, SQL, no SQL', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
-(6, 'Tools', 'IDE, text editor', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
-(7, 'Devops', 'AWS, cloud, Azure', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1);
+(1, 'Java', 'Java, java core, java 8', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
+(2, 'Spring', 'Spring, framework, mvc, core, cloud', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
+(3, 'Database', 'Mysql, SQL, no SQL', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
+(4, 'Tools', 'IDE, text editor', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
+(5, 'Devops', 'AWS, cloud, Azure', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1);
 
 
 CREATE TABLE `tblposts` (

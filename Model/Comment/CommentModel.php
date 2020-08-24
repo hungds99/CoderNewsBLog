@@ -36,4 +36,20 @@
             $query = "UPDATE tblcomments SET status='0' WHERE id='$id'";
             $result = mysqli_query($this->conn, $query);
         }
+
+        function GetPostComments($post_id) {
+            $query = "SELECT name,comment,postingDate FROM tblcomments WHERE postId='$post_id' AND status=1";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function AddComment($postid,$name,$email,$comment) {
+            $query = "INSERT INTO tblcomments(postId,name,email,comment,status) values('$postid','$name','$email','$comment',0)";
+            $result = mysqli_query($this->conn, $query);
+            if ($result) {
+                return 1;
+            } else {
+                return 2;
+            }
+        }
     }

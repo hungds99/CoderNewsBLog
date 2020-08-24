@@ -10,12 +10,22 @@ body {
     background-color: #f6f6f6;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 /*main-menu*/
 
 .main-menu {
     width: 100%;
-    height: 250px;
+    height: 230px;
     padding: 0;
     margin-bottom: 50px;
 }
@@ -23,7 +33,7 @@ body {
 .navbar-head {
     width: 100%;
     height: 200px;
-    background: url("/Web_Tin_Tuc/Assets/images/homepage/bg.jpg");
+    background: url("../images/homepage/bg.jpg");
     background-size: cover;
     padding: 50px;
     display: flex;

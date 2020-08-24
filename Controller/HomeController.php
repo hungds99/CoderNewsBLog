@@ -1,20 +1,22 @@
 <?php
     include_once SYSTEM_PATH."/Model/Category/CategoryModel.php";
     include_once SYSTEM_PATH."/Model/Post/PostModel.php";
+    include_once SYSTEM_PATH."/Model/Comment/CommentModel.php";
 
     class HomeController {
         public $categoryModel;
         public $postModel;
+        public $commentModel;
 
         function __construct()
         {
             $this->categoryModel = new CategoryModel();
             $this->postModel = new PostModel();
+            $this->commentModel = new CommentModel();
         }
         
 
         function Index() {
-            // require_once SYSTEM_PATH."/View/Home/Home.php";
             $categories = $this->categoryModel->GetCategories();
 
             $posts = $this->postModel->GetLastedPost();
@@ -41,13 +43,41 @@
 
                 $i++;
             }
-            require_once SYSTEM_PATH."/View/Home/CustomHomePage.php";
+            require_once SYSTEM_PATH."/View/Home/Home.php";
         }
 
         function GetPostCat() {
+            $categories = $this->categoryModel->GetCategories();
             if (isset($_GET['id'])) {
-                $id = intval($_GET['id']);
-                
+                $category_id = intval($_GET['id']);
+                $posts = $this->postModel->GetPostByCategory($category_id);
+                $postlst = $this->postModel->GetPostLastestByCategory($category_id);
+                require_once SYSTEM_PATH."/View/Home/Post-Category.php";
+            }
+        }
+
+        function ViewPost() {
+            if (isset($_GET['id'])) {
+                $post_id = intval($_GET['id']);
+                $post = $this->postModel->GetPost($post_id);
+                $comments = $this->commentModel->GetPostComments($post_id);
+                $categories = $this->categoryModel->GetCategories();
+                require_once SYSTEM_PATH."/View/Home/View-Post.php";
+            }
+
+            if(isset($_POST['submit'])){
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $comment = $_POST['comment'];
+                $postid = intval($_GET['id']);
+
+                $result = $this->commentModel->AddComment($postid,$name,$email,$comment);
+
+                if ($result == 1) {
+                    header("location: index.php?c=Home&a=ViewPost&id=$postid&s=true");
+                } else {
+                    header("location: index.php?c=Home&a=ViewPost&id=$postid&e=true");
+                }
             }
         }
     
