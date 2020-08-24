@@ -1,24 +1,23 @@
-*{
-	
-	font-family: "Cairo", sans-serif;
-	margin: 0;
+* {
+    font-family: "Cairo", sans-serif;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    
-   
-	
 }
-body{
-	 background-color: #f6f6f6;
+
+body {
+    background-color: #f6f6f6;
 }
+
+
 /*main-menu*/
-.main-menu{
+
+.main-menu {
     width: 100%;
     height: 250px;
     padding: 0;
     margin-bottom: 50px;
-
 }
 
 .navbar-head {
@@ -30,7 +29,8 @@ body{
     display: flex;
     align-items: center;
 }
-.navbar-head h1{
+
+.navbar-head h1 {
     color: #fff;
     font-size: 100px;
     font-weight: 900;
@@ -44,25 +44,27 @@ body{
     background: #fff;
     padding-left: 100px;
     z-index: 1;
-    
     position: relative;
 }
+
 .navigation-bar {
     width: 85%;
     height: 100%;
 }
+
 .navigation-bar .nav {
     width: 100%;
     height: 100%;
     margin: 0;
     display: flex;
 }
+
 .nav .nav-item {
     width: 100px;
     height: 50px;
     position: relative;
-
 }
+
 .nav-item .nav-link {
     color: black;
     width: 100%;
@@ -75,233 +77,257 @@ body{
 
 .nav .nav-link:hover {
     border-bottom: 2px solid #4facfe;
+}
 
+.nav .nav-link:hover .nav-link {
+    color: #4facfe;
 }
-.nav .nav-link:hover .nav-link{
-    color :#4facfe;
-}
-.nav .nav-item:hover .sub-category{
+
+.nav .nav-item:hover .sub-category {
     display: block;
-
-
 }
-.nav-item .sub-category{
-	width: 150px;
-	height: auto;
-	position: absolute;
-	z-index: 1;
-	background: #fff;
-	top: 120%;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
-	padding: 15px 15px;
-	left: 10%;
-	display: none;
 
+.nav-item .sub-category {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    top: 90%;
+    box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
+    padding: 15px 15px;
+    left: 10%;
+    display: none;
 }
+
 .sub-category .sub-category-item {
-	width: 100%;
-	height: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-bottom: 1px solid #4facfe;
-	cursor: pointer;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #4facfe;
+    cursor: pointer;
 }
-.sub-category .sub-category-item:hover{
-	background: #f6f6f6;
+
+.sub-category .sub-category-item:hover {
+    background: #f6f6f6;
 }
 
 
 /*main-content*/
 
 .main-content {
-	padding: 0 100px;
+    padding: 0 100px;
 }
 
-.latest-post , .top-post{
-	width: 100%;
-	height: 450px;
-	background: #fff;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
+.latest-post,
+.top-post {
+    width: 100%;
+    height: 450px;
+    background: #fff;
+    box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
+}
 
+.latest-post .post-pic {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
 }
-.latest-post .post-pic{
-	width: 100%;
-	height: 60%;
-	overflow: hidden;
-}
+
 .latest-post img {
-	width: 100%;
-	height: 100%;
-}
-.latest-post .post-title{
-	color: #1c1c1c;
+    width: 100%;
+    height: 100%;
 }
 
-.latest-post .post-details{
-	padding: 10px;
-	position: relative;
-}
-.latest-post button{
-	position: absolute;
-	right: 3%;
-}
-.latest-post span{
-	margin: 5px;
+.latest-post .post-title {
+    color: #1c1c1c;
 }
 
-.top-post .post-item{
-	width: 100%;
-	height: 50%;
-	display: flex;
-	padding: 10px;
+.latest-post .post-details {
+    padding: 10px;
+    position: relative;
 }
-.top-post .post-pic{
-	width: 35%;
-	height: 100%;
-	overflow: hidden;
 
+.latest-post button {
+    position: absolute;
+    right: 3%;
 }
-.top-post img{
-	width: 100%;
-	height: 100%;
+
+.latest-post span {
+    margin: 5px;
 }
-.top-post .post-details{
-	padding: 10px;
-	position: relative;
+
+.top-post .post-item {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    padding: 10px;
 }
-.top-post button{
-	position: absolute;
-	right: 3%;
+
+.top-post .post-pic {
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
 }
-.top-post span{
-	margin: 5px;
+
+.top-post img {
+    width: 100%;
+    height: 100%;
 }
+
+.top-post .post-details {
+    padding: 10px;
+    position: relative;
+}
+
+.top-post button {
+    position: absolute;
+    right: 3%;
+}
+
+.top-post span {
+    margin: 5px;
+}
+
 .top-view {
-	height: 450px;
-	margin-top: 30px;
+    height: 450px;
+    margin-top: 30px;
+}
 
+.top-view .post-item {
+    height: 450px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
 }
-.top-view .post-item{
-	height: 450px;
-	background: #fff;
-	cursor: pointer;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
+
+.top-view .post-pic {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
 }
-.top-view .post-pic{
-	width: 100%;
-	height: 50%;
-	overflow: hidden;
-}
+
 .top-view img {
-	width: 100%;
-	height: 100%;
-}
-.top-view .post-title{
-	color: #1c1c1c;
+    width: 100%;
+    height: 100%;
 }
 
-.top-view .post-details{
-	height: 50%;
-	padding: 10px;
-	position: relative;
-}
-.top-view button{
-	position: absolute;
-	right: 3%;
-	top: 80%;
-}
-.top-view span{
-	margin: 5px;
+.top-view .post-title {
+    color: #1c1c1c;
 }
 
-.custom-post{
-	width: 80%;
-	height: auto;
-	padding: 20px 115px;
+.top-view .post-details {
+    height: 50%;
+    padding: 10px;
+    position: relative;
 }
-.custom-post .post-item{
-	width: 100%;
-	height: 50%;
-	display: flex;
-	padding: 10px;
-	background: #fff;
-	cursor: pointer;
-	margin-bottom: 15px;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
-}
-}
-.custom-post .post-pic{
-	width: 20%;
-	height: 100%;
-	overflow: hidden;
 
+.top-view button {
+    position: absolute;
+    right: 3%;
+    top: 80%;
 }
-.custom-post img{
-	width: 100%;
-	height: 100%;
+
+.top-view span {
+    margin: 5px;
 }
-.custom-post .post-details{
-	width: 80%;
-	height: 207px;
-	padding: 10px;
-	position: relative;
+
+.custom-post {
+    width: 80%;
+    height: auto;
+    padding: 20px 115px;
 }
-.custom-post button{
-	position: absolute;
-	right: 3%;
-	top: 80%;
+
+.custom-post .post-item {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
 }
-.custom-post span{
-	margin: 5px;
+
+.custom-post .post-pic {
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
 }
+
+.custom-post img {
+    width: 100%;
+    height: 100%;
+}
+
+.custom-post .post-details {
+    width: 80%;
+    height: 207px;
+    padding: 10px;
+    position: relative;
+}
+
+.custom-post button {
+    position: absolute;
+    right: 3%;
+    top: 80%;
+}
+
+.custom-post span {
+    margin: 5px;
+}
+
 .footer {
-	width: 100%;
-	height: 300px;
-	padding: 50px 0;
-	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    width: 100%;
+    height: 300px;
+    padding: 50px 0;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
-.footer .col {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.footer .social-icon{
-	display: flex;
-	margin-top: 30px;
-}
-.footer .social-icon div{
-	width: 25%;
-	margin: 10px;
-	border-radius: 50%;
-	width: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50px;
-	background: #fff;
 
+.footer .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer .social-icon i{
-	font-size: 20px;
+
+.footer .social-icon {
+    display: flex;
+    margin-top: 30px;
 }
-.footer .social-icon div{
-	cursor: pointer;
+
+.footer .social-icon div {
+    width: 25%;
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #fff;
 }
-.footer .social-icon div:hover{
-	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+.footer .social-icon i {
+    font-size: 20px;
 }
+
+.footer .social-icon div {
+    cursor: pointer;
+}
+
+.footer .social-icon div:hover {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
 .footer .social-icon div:hover i {
-	color: #fff;
+    color: #fff;
 }
 
 
 /* set menu đứng yên ở trên đầu khi croll chuột xuống 200px */
-.fix{
-	position: fixed;
-	top: 0;
-	
+
+.fix {
+    position: fixed;
+    top: 0;
 }
-
-
-

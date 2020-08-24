@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="Assets/css/customhomepage.css">
 
-    <title>Document</title>
+    <title>Trang chủ || Tin tức 24h</title>
 </head>
 <body>
 
