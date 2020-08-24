@@ -161,4 +161,9 @@
 
             require_once SYSTEM_PATH."/View/Post/postbycategory.php";
         }
+
+        function viewPost(){
+
+            require_once SYSTEM_PATH."/View/Post/viewpost.php";
+        }
     }
