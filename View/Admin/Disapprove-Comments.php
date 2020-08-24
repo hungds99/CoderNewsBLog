@@ -148,7 +148,28 @@ if (strlen($_SESSION['login']) == 0) {
                                                                         <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Disapprove this comment"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
                                                                 <?php endif; ?>
                                                                     &nbsp;
-                                                                        <a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                                    <a type="button" class="btn" data-toggle="modal" data-target="#exampleModal<?=$comment['id']?>" style="padding: 0;"><i class="fa fa-trash-o" style="color: #29b6f6"></i></a>
+                                                                         </td>
+                                                                        <!-- Modal -->
+                                                                        <div class="modal fade" id="exampleModal<?=$comment['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">                                                                        
+                                                                            <div class="modal-dialog" role="document">
+                                                                                <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông Báo</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    Bạn có muốn tiếp tục xóa không!.
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                                                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?=$comment['id']?>"> <i class="fa fa-trash-o" style="color: #f05050"></i></a>
+                                                                                </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                         </tr>
                                                     <?php
                                                     } ?>
