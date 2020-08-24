@@ -14,7 +14,7 @@
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $this->commentModel->ApproveComment($id);
-                header("location: index.php?c=Comment&a=Approve&s=true");
+                header("location: index.php?c=Comment&a=Disapprove&s=true");
             } else {
                 $comments = $this->commentModel->GetApproveComments();
                 require_once SYSTEM_PATH."/View/Admin/Manage-Comments.php";
@@ -25,7 +25,7 @@
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $this->commentModel->DisapproveComment($id);
-                header("location: index.php?c=Comment&a=Disapprove&s=true");
+                header("location: index.php?c=Comment&a=Approve&s=true");
             } else {
                 $comments = $this->commentModel->GetDisApproveComments();
                 require_once SYSTEM_PATH."/View/Admin/Disapprove-Comments.php";

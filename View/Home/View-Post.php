@@ -1,3 +1,13 @@
+<?php
+    if (isset($_GET['s'])) {
+        echo "<script type='text/javascript'>alert(' Bình luận thành công. Vui lòng chờ phê duyệt !!!');</script>";
+    }
+
+    if (isset($_GET['e'])) {
+        echo "<script type='text/javascript'>alert(' Bình luận lỗi. Vui lòng thử lại !!!');</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,14 +58,14 @@
                 <div class="post_content" style="margin-top:20px; margin-bottom:20px;">
                     <h4>Nhận xét của bạn về bài viết: </h4>
                     <!-- comment -->
-                    <form action="index.php?c=Home&a=ViewPost&id=<?=$_GET['id']?>" method="post">
+                    <form action="index.php?c=Home&a=Comment&id=<?=$_GET['id']?>" method="post">
                             <div class="form-group form-inline">
                                 <input type="text" class="form-control cmt_name" name="name" id="cmt_name" placeholder="Nhập tên*">
                                 <input type="text" class="form-control cmt_email" name="email" id="cmt_email" placeholder="Nhập Email*">
                             </div>
-                            <textarea class="comment-area" name="comment" id="comment-area" ></textarea>
+                            <textarea class="comment-area" name="comment" id="comment-area" style="padding: 15px;"></textarea>
                             
-                            <button class="btn btn-danger" id="btn-addcoment" name="submit">Bình luận</button>
+                            <button class="btn btn-danger" id="btn-addcoment" name="submit" type="submit">Bình luận</button>
                         </form>
                         <!-- end comment -->
 

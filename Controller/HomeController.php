@@ -72,7 +72,9 @@
                 $categories = $this->categoryModel->GetCategories();
                 require_once SYSTEM_PATH."/View/Home/View-Post.php";
             }
+        }
 
+        function Comment() {
             if(isset($_POST['submit'])){
                 $name = $_POST['name'];
                 $email = $_POST['email'];

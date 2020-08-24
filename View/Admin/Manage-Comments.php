@@ -90,13 +90,13 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-6">
                                 <?php if (isset($_GET['s'])) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        <strong>Thành công !</strong> 
+                                        <strong>Thao tác thành công !</strong> 
                                     </div>
                                 <?php } ?>
 
                                 <?php if (isset($_GET['e'])) { ?>
                                     <div class="alert alert-danger" role="alert">
-                                        <strong>Thất bại</strong>
+                                        <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -140,12 +140,12 @@ if (strlen($_SESSION['login']) == 0) {
                                                             <td><?=$comment['postingDate']?></td>
                                                             <td>
                                                                 <?php if ($st == 0) : ?>
-                                                                    <a href="index.php?c=Comment&a=Approve&id=<?=$comment['id']?>" title="Approve this comment"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
+                                                                    <a href="index.php?c=Comment&a=Approve&id=<?=$comment['id']?>" title="Xác nhận bình luận" onclick="return confirm('Bạn có muốn xác nhận bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
                                                                 <?php else : ?>
-                                                                    <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Disapprove this comment"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
+                                                                    <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Hủy bình luận" onclick="return confirm('Bạn có muốn hủy bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
                                                                 <?php endif; ?>
 
-                                                                &nbsp;<a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                                &nbsp;<a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                         </tr>
                                                     <?php
                                                     } ?>
