@@ -165,7 +165,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                                                 </div>
                                                                                 <div class="modal-footer">
                                                                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                                                                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?=$comment['id']?>"> <i class="fa fa-trash-o" style="color: #f05050"></i></a>
+                                                                                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?=$comment['id']?>"> <i class="fa fa-trash-o" style="color: #FFFFFF"></i></a>
                                                                                 </div>
                                                                                 </div>
                                                                             </div>
