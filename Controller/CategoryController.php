@@ -76,4 +76,5 @@
         function Add() {
             require_once SYSTEM_PATH."/View/Admin/Add-Category.php";
         }
+
     }
