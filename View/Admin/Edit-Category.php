@@ -50,10 +50,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Sửa danh mục</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="dashboard.php">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="manage-categories.php">Danh mục</a>
+                                            <a href="index.php?c=Category&a=Manage">Danh mục</a>
                                         </li>
                                         <li class="active">
                                             Sửa danh mục
@@ -76,13 +76,13 @@ if (strlen($_SESSION['login']) == 0) {
                                         <div class="col-sm-6">
                                             <?php if (isset($_GET['s'])) { ?>
                                                 <div class="alert alert-success" role="alert">
-                                                    <strong>Thành công !</strong> 
+                                                    <strong>Thao tác thành công !</strong> 
                                                 </div>
                                             <?php } ?>
 
                                             <?php if (isset($_GET['e'])) { ?>
                                                 <div class="alert alert-danger" role="alert">
-                                                    <strong>Thất bại</strong>
+                                                    <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                                 </div>
                                             <?php } ?>
                                         </div>
@@ -93,7 +93,7 @@ if (strlen($_SESSION['login']) == 0) {
                                     ?>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <form class="form-horizontal" action="index.php?c=Category&a=Save&id=<?=$category['id']?>" name="category" method="post">
+                                                <form class="form-horizontal" action="index.php?c=Category&a=SaveEdit&id=<?=$category['id']?>" name="category" method="post">
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label">Danh mục</label>
                                                         <div class="col-md-10">
@@ -111,7 +111,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                 <div class="form-group">
                                                     <label class="col-md-2 control-label">&nbsp;</label>
                                                     <div class="col-md-10">
-                                                        <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submit">
+                                                        <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="edit">
                                                             Cập nhật
                                                         </button>
                                                     </div>

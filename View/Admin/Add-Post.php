@@ -1,9 +1,7 @@
 <?php
 if (strlen($_SESSION['login']) == 0) {
-    header('location:index.php');
+    header('location: index.php?c=Admin&a=LoginPage');
 } else {
-
-    
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -39,18 +37,6 @@ if (strlen($_SESSION['login']) == 0) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
         <script src="assets/js/modernizr.min.js"></script>
-        <script>
-            function getSubCat(val) {
-                $.ajax({
-                    type: "POST",
-                    url: "get_subcategory.php",
-                    data: 'catid=' + val,
-                    success: function(data) {
-                        $("#subcategory").html(data);
-                    }
-                });
-            }
-        </script>
     </head>
 
 
@@ -82,10 +68,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title"> Thêm bài viết </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="#">Bài viết</a>
+                                            <a href="index.php?c=Post&a=Manage">Bài viết</a>
                                         </li>
                                         <li class="active">
                                             Thêm bài viết
@@ -101,13 +87,13 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-6">
                                 <?php if (isset($_GET['s'])) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        <strong>Thành công !</strong> 
+                                        <strong>Thao tác thành công !</strong> 
                                     </div>
                                 <?php } ?>
 
                                 <?php if (isset($_GET['e'])) { ?>
                                     <div class="alert alert-danger" role="alert">
-                                        <strong>Thất bại</strong>
+                                        <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                     </div>
                                 <?php } ?>
                             </div>

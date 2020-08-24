@@ -80,13 +80,13 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title"> Cập nhật hình ảnh </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="#"> Bài viết </a>
+                                            <a href="index.php?c=Post&a=Manage"> Bài viết </a>
                                         </li>
                                         <li>
-                                            <a href="#"> Sửa bài viết </a>
+                                            <a href="index.php?c=Post&a=Edit&id=<?=$_GET['id']?>"> Sửa bài viết </a>
                                         </li>
                                         <li class="active">
                                             Cập nhật hình ảnh
@@ -102,13 +102,13 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-6">
                                 <?php if (isset($_GET['s'])) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        <strong>Thành công !</strong> 
+                                        <strong>Thao tác thành công !</strong> 
                                     </div>
                                 <?php } ?>
 
                                 <?php if (isset($_GET['e'])) { ?>
                                     <div class="alert alert-danger" role="alert">
-                                        <strong>Thất bại</strong>
+                                        <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                     </div>
                                 <?php } ?>
                             </div>

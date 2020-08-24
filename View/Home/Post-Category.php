@@ -9,7 +9,11 @@
     
     <link rel="stylesheet" href="Assets/css/postbycategory.css" type="text/css">
 
-    <title>Document</title>
+    <!-- Common function -->
+    <?php include('includes/Common.php'); ?>
+	<!--  -->
+
+    <title>Danh mục || Tin tức 24h</title>
 </head>
 <body>
 	<!-- Header -->
@@ -22,7 +26,7 @@
     		
     		<div class="row ">
     			<div class="col col-lg-12 ">
-    				<h3>Kết quả theo danh mục : Python</h3>
+    				<h3>Kết quả </h3>
     			</div>
     		</div>
 
@@ -44,10 +48,14 @@
                                             <img src="Assets/images/posts/<?=$post['PostImage']?>" alt="">
                                         </div>
                                         <div class="post-details">
-                                            <p> <span><i class="far fa-calendar"></i><?= $post['PostingDate'] ?></span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
-                                            <h3 class="post-title"><?= $post['title'] ?></h3>
+                                            <p> <span><i class="far fa-calendar"></i> <?= $post['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
+                                            <h4 class="post-title"><?= $post['title'] ?></h4>
 
-                                            <p class="post-intro"><?= $post['PostDetails']?></p>
+                                            <p class="post-intro">
+                                                <?php 
+                                                    echo SplitStr($post["PostDetails"], 200);
+                                                ?>
+                                            </p>
                                             <button class="btn btn-danger"><a href="index.php?c=Home&a=ViewPost&id=<?= $post['postid'] ?>">Đọc thêm</a></button>
                                         </div>
                                     </div>
@@ -60,9 +68,6 @@
                 </div>
                 <!-- end postitem -->
             </div>
-
-    		
-    			
     		
     	</div>
 

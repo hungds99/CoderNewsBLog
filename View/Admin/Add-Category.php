@@ -50,10 +50,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Thêm danh mục</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="dashboard.php">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="manage-categories.php">Danh mục</a>
+                                            <a href="index.php?c=Category&a=Manage">Danh mục</a>
                                         </li>
                                         <li class="active">
                                             Thêm danh mục
@@ -76,13 +76,13 @@ if (strlen($_SESSION['login']) == 0) {
                                         <div class="col-sm-6">
                                         <?php if (isset($_GET['s'])) { ?>
                                                 <div class="alert alert-success" role="alert">
-                                                    <strong>Thành công !</strong> 
+                                                    <strong>Thao tác thành công !</strong> 
                                                 </div>
                                             <?php } ?>
 
                                             <?php if (isset($_GET['e'])) { ?>
                                                 <div class="alert alert-danger" role="alert">
-                                                    <strong>Thất bại</strong>
+                                                    <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                                 </div>
                                             <?php } ?>
                                         </div>

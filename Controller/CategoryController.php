@@ -52,7 +52,17 @@
         }
 
         function Save() {
-            if (isset($_POST['submit']) && isset($_GET['id'])) {
+            if(isset($_POST['submit'])) {
+                $categoryName = $_POST['category'];
+                $description = $_POST['description'];
+                $status = 1;
+                $this->categoryModel->AddCategory($categoryName, $description, $status);
+                header("location: index.php?c=Category&a=Add&s=true");
+            }
+        }
+
+        function SaveEdit() {
+            if (isset($_POST['edit']) && isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $categoryName = $_POST['category'];
                 $description = $_POST['description'];
@@ -62,14 +72,9 @@
 
                 $this->categoryModel->UpdateCategory($id, $categoryName, $updationDate, $description);
                 header("location: index.php?c=Category&a=Edit&id=$id&s=true");
-            }
-
-            if(isset($_POST['submit'])) {
-                $categoryName = $_POST['category'];
-                $description = $_POST['description'];
-                $status = 1;
-                $this->categoryModel->AddCategory($categoryName, $description, $status);
-                header("location: index.php?c=Category&a=Add&s=true");
+            } else {
+                $id = intval($_GET['id']);
+                header("location: index.php?c=Category&a=Edit&id=$id&e=true");
             }
         }
 

@@ -66,10 +66,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title"> Quản lý bài viết </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Bảng điểu khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điểu khiển</a>
                                         </li>
                                         <li>
-                                            <a href="#">Bài viết</a>
+                                            <a href="index.php?c=Post&a=Manage">Bài viết</a>
                                         </li>
                                         <li class="active">
                                             Quản lý bài viết
@@ -81,9 +81,6 @@ if (strlen($_SESSION['login']) == 0) {
                         </div>
                         <!-- end row -->
 
-
-
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
@@ -91,13 +88,13 @@ if (strlen($_SESSION['login']) == 0) {
                                         <div class="col-sm-6">
                                         <?php if (isset($_GET['s'])) { ?>
                                                 <div class="alert alert-success" role="alert">
-                                                    <strong>Thành công !</strong> 
+                                                    <strong>Thao tác thành công !</strong> 
                                                 </div>
                                             <?php } ?>
 
                                             <?php if (isset($_GET['e'])) { ?>
                                                 <div class="alert alert-danger" role="alert">
-                                                    <strong>Thất bại</strong>
+                                                    <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                                 </div>
                                             <?php } ?>
                                         </div>
@@ -120,8 +117,8 @@ if (strlen($_SESSION['login']) == 0) {
                                                         <tr>
                                                             <td><b><?=$post['title']?></b></td>
                                                             <td><?=$post['category']?></td>
-                                                            <td><a href="index.php?c=Post&a=Edit&id=<?=$post['postid']?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                                                &nbsp;<a href="index.php?c=Post&a=Del&id=<?=$post['postid']?>" onclick="return confirm('Bạn có muốn xóa bài viết ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                            <td><a href="index.php?c=Post&a=Edit&id=<?=$post['postid']?>"><i class="fa fa-pencil" style="color: #29b6f6;" title="Sửa bài viết"></i></a>
+                                                                &nbsp;<a href="index.php?c=Post&a=Del&id=<?=$post['postid']?>" onclick="return confirm('Bạn có muốn xóa bài viết ?')"> <i class="fa fa-trash-o" style="color: #f05050" title="Xóa bài viết"></i></a> </td>
                                                         </tr>
                                                      <?php }
                                                     ?>

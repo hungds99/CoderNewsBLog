@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="Assets/css/viewpost.css" type="text/css">
 
-    <title>Document</title>
+    <title>Đọc bài viết || Tin tức 24h</title>
 </head>
 <body>
     <!-- Header -->
@@ -42,8 +42,13 @@
                         }
                         ?>
 
-                        <!-- comment -->
-                        <form action="index.php?c=Home&a=ViewPost&id=<?=$_GET['id']?>" method="post">
+                        
+                </div>
+                <!-- end postitem -->
+                <div class="post_content" style="margin-top:20px; margin-bottom:20px;">
+                    <h4>Nhận xét của bạn về bài viết: </h4>
+                    <!-- comment -->
+                    <form action="index.php?c=Home&a=ViewPost&id=<?=$_GET['id']?>" method="post">
                             <div class="form-group form-inline">
                                 <input type="text" class="form-control cmt_name" name="name" id="cmt_name" placeholder="Nhập tên*">
                                 <input type="text" class="form-control cmt_email" name="email" id="cmt_email" placeholder="Nhập Email*">
@@ -75,7 +80,6 @@
                         </div>
                         <!-- end list comments -->
                 </div>
-                <!-- end postitem -->
             </div>
     	</div>
     </div>

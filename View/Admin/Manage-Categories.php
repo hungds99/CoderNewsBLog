@@ -48,7 +48,7 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Quản lý danh mục</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="dashboard.php">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li class="active">
                                             Quản lý danh mục
@@ -65,13 +65,13 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-6">
                                 <?php if (isset($_GET['s'])) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        <strong>Thành công !</strong> 
+                                        <strong>Thao tác thành công !</strong> 
                                     </div>
                                 <?php } ?>
 
                                 <?php if (isset($_GET['e'])) { ?>
                                     <div class="alert alert-danger" role="alert">
-                                        <strong>Thất bại</strong>
+                                        <strong>Có lỗi xảy ra vui lòng thử lại !</strong>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -80,7 +80,7 @@ if (strlen($_SESSION['login']) == 0) {
                                 <div class="col-md-12">
                                     <div class="demo-box m-t-20">
                                         <div class="m-b-30">
-                                            <a href="add-category.php">
+                                            <a href="index.php?c=Category&a=Add">
                                                 <button id="addToTable" class="btn btn-success waves-effect waves-light">Thêm <i class="mdi mdi-plus-circle-outline"></i></button>
                                             </a>
                                         </div>
@@ -109,11 +109,11 @@ if (strlen($_SESSION['login']) == 0) {
                                                             <td><?=$category->UpdationDate?></td>
                                                             <td>
                                                                 <a href="index.php?c=Category&a=Edit&id=<?=$category->id?>">
-                                                                    <i class="fa fa-pencil" style="color: #29b6f6;"></i>
+                                                                    <i class="fa fa-pencil" style="color: #29b6f6;" title="Sửa danh mục"></i>
                                                                 </a>
                                                                 &nbsp;
-                                                                <a href="index.php?c=Category&a=Del&id=<?=$category->id?>"> 
-                                                                    <i class="fa fa-trash-o" style="color: #f05050"></i>
+                                                                <a href="index.php?c=Category&a=Del&id=<?=$category->id?>" onclick="return confirm('Bạn có muốn xóa danh mục ?')"> 
+                                                                    <i class="fa fa-trash-o" style="color: #f05050" title="Xóa danh mục"></i>
                                                                 </a> 
                                                             </td>
                                                         </tr>
@@ -161,12 +161,12 @@ if (strlen($_SESSION['login']) == 0) {
                                                             <td><?=$categorydel->PostingDate?></td>
                                                             <td><?=$categorydel->UpdationDate?></td>
                                                             <td>
-                                                                <a href="index.php?c=Category&a=Restore&id=<?=$categorydel->id?>">
-                                                                    <i class="fa fa-pencil" style="color: #29b6f6;"></i>
+                                                                <a href="index.php?c=Category&a=Restore&id=<?=$categorydel->id?>" onclick="return confirm('Bạn có muốn khôi phục danh mục ?')">
+                                                                    <i class="fa fa-pencil" style="color: #29b6f6;" title="Khôi phục danh mục"></i>
                                                                 </a>
                                                                 &nbsp;
-                                                                <a href="index.php?c=Category&a=ForceDel&id=<?=$categorydel->id?>"> 
-                                                                    <i class="fa fa-trash-o" style="color: #f05050"></i>
+                                                                <a href="index.php?c=Category&a=ForceDel&id=<?=$categorydel->id?>" onclick="return confirm('Bạn có muốn xóa vĩnh viễn danh mục ?')"> 
+                                                                    <i class="fa fa-trash-o" style="color: #f05050" title="Xóa vĩnh viễn danh mục"></i>
                                                                 </a> 
                                                             </td>
                                                         </tr>

@@ -33,7 +33,8 @@ INSERT INTO `tblcategory` (`id`, `CategoryName`, `Description`, `PostingDate`, `
 (2, 'Spring', 'Spring, framework, mvc, core, cloud', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
 (3, 'Database', 'Mysql, SQL, no SQL', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
 (4, 'Tools', 'IDE, text editor', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
-(5, 'Devops', 'AWS, cloud, Azure', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1);
+(5, 'Devops', 'AWS, cloud, Azure', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1),
+(6, 'Spring Boot', 'Spring Boot, Spring framework', '2020-08-07 10:28:09', '2020-08-07 18:41:07', 1);
 
 
 CREATE TABLE `tblposts` (
@@ -48,7 +49,7 @@ CREATE TABLE `tblposts` (
     `PostImage` VARCHAR(255) DEFAULT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`CategoryId`)
-        REFERENCES tblcategory (`id`),
+        REFERENCES tblcategory (`id`)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 

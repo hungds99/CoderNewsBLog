@@ -106,6 +106,18 @@
             return $result->fetch_all(1);
         }
 
+        function GetPostBySearch($search) {
+            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function GetPostLastestBySearch($search) {
+            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
         function GetPostLastestByCategory($categoryId) {
             $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
             $result = mysqli_query($this->conn, $query);

@@ -15,7 +15,7 @@
                     <li class="nav-item">
                         <a href="index.php?c=Home&a=GetPostCat&id=<?= $category->id ?>" class="nav-link">
                             <i class="fab fa-java"></i>
-                            <span> <?= $category->CategoryName ?></span>                          
+                            <strong><span>&nbsp;&nbsp;<?= $category->CategoryName ?></span></strong>                       
                         </a>
 
                         <!-- <div class="sub-category">
@@ -23,11 +23,16 @@
                             <div class="sub-category-item">Java OOP</div>
                             <div class="sub-category-item">Java 8</div>
                         </div> -->
-
                     </li>
                 <?php 
                 } 
                 ?>
+               
+                <form class="form-inline" style="margin-top: 6px; position: absolute; right: 110px;" method="get">
+                    <input class="form-control mr-sm-2" type="search" name="q" placeholder="Nhập tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                </form>
+               
                 <!-- ============================================= -->
                 <!-- 					 End Category 			   -->
                 <!-- ============================================= -->

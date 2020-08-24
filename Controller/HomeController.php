@@ -17,33 +17,41 @@
         
 
         function Index() {
-            $categories = $this->categoryModel->GetCategories();
+            if (isset($_GET['q'])) {
+                $search = $_GET['q'];
+                $posts = $this->postModel->GetPostBySearch($search);
+                $postlst = $this->postModel->GetPostLastestBySearch($search);
+                $categories = $this->categoryModel->GetCategories();
+                require_once SYSTEM_PATH."/View/Home/Post-Category.php";
+            } else {
+                $categories = $this->categoryModel->GetCategories();
 
-            $posts = $this->postModel->GetLastedPost();
+                $posts = $this->postModel->GetLastedPost();
 
-            $randomposts = $this->postModel->GetRandomPost();
+                $randomposts = $this->postModel->GetRandomPost();
 
-            $lastedposts = array();
-            $topposts = array();
-            $otherposts = array();
+                $lastedposts = array();
+                $topposts = array();
+                $otherposts = array();
 
-            $i = 0;
-            foreach($posts as $post) {
-                if( $i == 0) {
-                    $lastedposts[] = $post;
+                $i = 0;
+                foreach($posts as $post) {
+                    if( $i == 0) {
+                        $lastedposts[] = $post;
+                    }
+
+                    if($i == 1 || $i == 2) {
+                        $topposts[] = $post;
+                    }
+
+                    if($i > 2) {
+                        $otherposts[] = $post;
+                    }
+
+                    $i++;
                 }
-
-                if($i == 1 || $i == 2) {
-                    $topposts[] = $post;
-                }
-
-                if($i > 2) {
-                    $otherposts[] = $post;
-                }
-
-                $i++;
+                require_once SYSTEM_PATH."/View/Home/Home.php";
             }
-            require_once SYSTEM_PATH."/View/Home/Home.php";
         }
 
         function GetPostCat() {
