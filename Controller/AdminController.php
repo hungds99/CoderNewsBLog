@@ -33,4 +33,49 @@
             }
         }
 
+        function ChangePass() {
+            require_once SYSTEM_PATH."/View/Admin/Change-Pass.php";
+        }
+
+        function SavePass() {
+            if (isset($_POST['submit'])) {
+                
+                // Mã hóa mật khẩu hiện tại 
+                $password = $_POST['password'];
+                $options = ['cost' => 12];
+                $hashedpass = password_hash($password, PASSWORD_BCRYPT, $options);
+                $adminid = $_SESSION['login'];
+        
+                // Mã hóa mật khẩu mới
+                $newpassword = $_POST['newpassword'];
+                $newhashedpass = password_hash($newpassword, PASSWORD_BCRYPT, $options);
+        
+                // Thời gian thay đổi mật khẩu
+                // date_default_timezone_set('Asia/Ho_Chi_Minh');
+                // $currentTime = date('Y-m-d H:i:s');
+                
+                $checkAdmin = $this->adminModel->CheckExistAdmin($adminid);
+
+                if ($checkAdmin > 0) {
+                    $dbpassword = $checkAdmin['AdminPassword'];
+
+                    // Kiểm tra trùng khớp mật khẩu với mật khẩu cũ
+                    if (password_verify($password, $dbpassword)) {
+                        $result = $this->adminModel->ChangePassword($newhashedpass, $adminid);
+                       
+                        if ($result == 1) {
+                            header("location: index.php?c=Admin&a=ChangePass&s=true");
+                        } else {
+                            header("location: index.php?c=Admin&a=ChangePass&e=true");
+                        }
+                    } else {
+                        
+                        header("location: index.php?c=Admin&a=ChangePass&e=true");
+                    }
+                } else {
+                    header("location: index.php?c=Admin&a=ChangePass&e=true");
+                }
+            }
+        }
+
     }

@@ -82,7 +82,7 @@ if (strlen($_SESSION['login']) == 0) {
                     <!-- end row -->
 
                     <div class="row">
-                        <a href="manage-categories.php">
+                        <a href="index.php?c=Category&a=Manage">
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div class="card-box widget-box-one">
                                     <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
@@ -95,7 +95,7 @@ if (strlen($_SESSION['login']) == 0) {
                             </div>
                         </a><!-- end col -->
 
-                        <a href="manage-posts.php">
+                        <a href="index.php?c=Post&a=Manage">
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div class="card-box widget-box-one">
                                     <i class="mdi mdi-layers widget-one-icon"></i>
@@ -108,13 +108,12 @@ if (strlen($_SESSION['login']) == 0) {
                             </div><!-- end col -->
                         </a>
 
-
                     </div>
                     <!-- end row -->
 
                     <div class="row">
 
-                        <a href="trash-posts.php">
+                        <a href="index.php?c=Post&a=Trash">
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div class="card-box widget-box-one">
                                     <i class="mdi mdi-delete widget-one-icon"></i>

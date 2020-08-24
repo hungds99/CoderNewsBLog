@@ -2,7 +2,7 @@
 
     <!-- LOGO -->
     <div class="topbar-left">
-        <a href="index.php?c=Admin&a=Dashboard" class="logo"><span>CODER<span>NEWS</span></span><i class="mdi mdi-layers"></i></a>
+        <a href="index.php?c=Dashboard&a=Home" class="logo"><span>CODER<span>NEWS</span></span><i class="mdi mdi-layers"></i></a>
     </div>
 
     <!-- Button mobile view to collapse sidebar menu -->
@@ -30,9 +30,9 @@
                             <h5>Hi, Admin</h5>
                         </li>
                     
-                        <li><a href="change-password.php"><i class="ti-settings m-r-5"></i> Đổi mật khẩu</a></li>
+                        <li><a href="index.php?c=Admin&a=ChangePass"><i class="ti-settings m-r-5"></i> Đổi mật khẩu</a></li>
                 
-                        <li><a href="logout.php"><i class="ti-power-off m-r-5"></i> Đăng xuất</a></li>
+                        <li><a href="index.php?c=Admin&a=Logout"><i class="ti-power-off m-r-5"></i> Đăng xuất</a></li>
                     </ul>
                 </li>
 

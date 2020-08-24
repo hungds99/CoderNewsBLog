@@ -31,4 +31,20 @@
             }
         }
 
+        function ChangePassword($newhashedpass, $adminid) {
+            $query = "UPDATE tbladmin SET AdminPassword='$newhashedpass' WHERE AdminUserName='$adminid'";
+            $result = mysqli_query($this->con, $query);
+            if($result) {
+                return 1;
+            } else {
+                return 2;
+            }
+        }
+
+        function CheckExistAdmin($adminid) {
+            $query = "SELECT AdminPassword FROM tbladmin WHERE AdminUserName='$adminid' || AdminEmailId='$adminid'";
+            $result = mysqli_query($this->con, $query);
+            return mysqli_fetch_array($result);
+        }
+
     }
