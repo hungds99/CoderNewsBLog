@@ -246,6 +246,7 @@ body{
 }
 .comments .comment-text{
     padding-left: 20px;
+    width: 85%; 
 }
 .comments img {
     width: 80px;
