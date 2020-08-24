@@ -28,7 +28,7 @@
 					foreach ($categories as $category) {
 					?>
 						<li class="nav-item">
-							<a href="index.php?c=Category&a=Get&id=<?= $category->id ?>" class="nav-link">
+							<a href="index.php?c=Home&a=GetPostCat&id=<?= $category->id ?>" class="nav-link">
 								<i class="fab fa-java"></i>
 								<span> <?= $category->CategoryName ?></span>                          
 							</a>

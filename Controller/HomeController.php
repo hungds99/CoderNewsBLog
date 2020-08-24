@@ -43,5 +43,12 @@
             }
             require_once SYSTEM_PATH."/View/Home/CustomHomePage.php";
         }
+
+        function GetPostCat() {
+            if (isset($_GET['id'])) {
+                $id = intval($_GET['id']);
+                
+            }
+        }
     
 }
