@@ -115,146 +115,140 @@ body{
 /*main-content*/
 
 .main-content {
-	padding: 0 100px;
+   
+    height: auto;
+    padding: 50px 100px;
 }
+.sidebar_left {
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+    padding: 15px 10px;
+    position: relative;
+}
+.sidebar_left .sidebar_search{
+    width: 100%;
+    height: 46px;
+    color: #6f6f6f;
+    font-size: 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 20px;
+    outline: none;
+    overflow: visible;
+    padding: 0 35px 0 15px;
+    margin-bottom: 30px;
+}
+.sidebar_left .icon_search{
+    position: absolute;
+    right: 7%;
+    top: 2.7%;
+    user-select: none;
+    font-size: 16px;
+    color: #6f6f6f;
+}
+.sidebar_left .list_categories{
+    width: 100%;
+    height: auto;
+}
+.sidebar_left .category_item{
+    width: 100%;
+    height: 48px;
+    
+}
+.sidebar_left .category_item a{
+    font-size: 16px;
+    color:#6f6f6f;
+}
+.sidebar_left .category_item a:hover {
+    text-decoration: none;
+}
+.sidebar_left .recent-post{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+.sidebar_left .recent-post .post-item {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 10px;
+}
+.recent-post .post-pic{
+    width: 30%;
+    height: 100%;
+}
+.recent-post .post-details{
+    width: 70%;
+    height: 100%;
+    padding: 5px 15px;
+}
+.recent-post img{
+    width: 100%;
+    height: 100%;
+}
+.recent-post span {
+    margin: 5px;
 
-.latest-post , .top-post{
-	width: 100%;
-	height: 450px;
-	background: #fff;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
-
 }
-.latest-post .post-pic{
-	width: 100%;
-	height: 60%;
-	overflow: hidden;
+.tags {
+    padding: 20px 0;
 }
-.latest-post img {
-	width: 100%;
-	height: 100%;
+.tags .tag-item {
+    width: 90px;
+    height: 36px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color:#6f6f6f;
+    padding: 0 15px;
+    margin-right: 5px;
+    margin-bottom:10px;
 }
-.latest-post .post-title{
-	color: #1c1c1c;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    
 }
-
-.latest-post .post-details{
-	padding: 10px;
-	position: relative;
+.grid-container .grid-item{
+    max-width: 95%;
+    margin-bottom: 20px;
+    margin-right: 15px;
+   
 }
-.latest-post button{
-	position: absolute;
-	right: 3%;
-}
-.latest-post span{
-	margin: 5px;
-}
-
-.top-post .post-item{
-	width: 100%;
-	height: 50%;
-	display: flex;
-	padding: 10px;
-}
-.top-post .post-pic{
-	width: 35%;
-	height: 100%;
-	overflow: hidden;
-
-}
-.top-post img{
-	width: 100%;
-	height: 100%;
-}
-.top-post .post-details{
-	padding: 10px;
-	position: relative;
-}
-.top-post button{
-	position: absolute;
-	right: 3%;
-}
-.top-post span{
-	margin: 5px;
-}
-.top-view {
-	height: 450px;
-	margin-top: 30px;
-
-}
-.top-view .post-item{
+.grid-item .post-item{
 	height: 450px;
 	background: #fff;
 	cursor: pointer;
 	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
 }
-.top-view .post-pic{
+.grid-item .post-pic{
 	width: 100%;
 	height: 50%;
 	overflow: hidden;
 }
-.top-view img {
+.grid-item img {
 	width: 100%;
 	height: 100%;
 }
-.top-view .post-title{
+.grid-item .post-title{
 	color: #1c1c1c;
 }
 
-.top-view .post-details{
+.grid-item .post-details{
 	height: 50%;
 	padding: 10px;
 	position: relative;
 }
-.top-view button{
+.grid-item button{
 	position: absolute;
 	right: 3%;
 	top: 80%;
 }
-.top-view span{
+.grid-item span{
 	margin: 5px;
 }
 
-.custom-post{
-	width: 80%;
-	height: auto;
-	padding: 20px 115px;
-}
-.custom-post .post-item{
-	width: 100%;
-	height: 50%;
-	display: flex;
-	padding: 10px;
-	background: #fff;
-	cursor: pointer;
-	margin-bottom: 15px;
-	box-shadow: 0 6px 50px 20px rgba(36, 37, 38, 0.08);
-
-}
-.custom-post .post-pic{
-	width: 20%;
-	height: 100%;
-	overflow: hidden;
-
-}
-.custom-post img{
-	width: 100%;
-	height: 100%;
-}
-.custom-post .post-details{
-	width: 80%;
-	height: 207px;
-	padding: 10px;
-	position: relative;
-}
-.custom-post button{
-	position: absolute;
-	right: 3%;
-	top: 80%;
-}
-.custom-post span{
-	margin: 5px;
-}
 .footer {
 	width: 100%;
 	height: 300px;
