@@ -24,162 +24,25 @@
                     <!-- ============================================= -->
                     <!-- 					 Category 				   -->
                     <!-- ============================================= -->
+					<?php
+					foreach ($categories as $category) {
+					?>
+						<li class="nav-item">
+							<a href="index.php?c=Category&a=Get&id=<?= $category->id ?>" class="nav-link">
+								<i class="fab fa-java"></i>
+								<span> <?= $category->CategoryName ?></span>                          
+							</a>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Java</span>                          
-                        </a>
+							<!-- <div class="sub-category">
+								<div class="sub-category-item">Java Core</div>
+								<div class="sub-category-item">Java OOP</div>
+								<div class="sub-category-item">Java 8</div>
+							</div> -->
 
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Spring</span>                          
-                        </a>
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>DataBase</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Tool</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Devops</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>C</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>C#</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>C++</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Python</span>
-
-                        </a>
-                       
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>PHP</span>
-
-                        </a>
-                        
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Javascript</span>
-
-                        </a>
-                       
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class=""></i>
-                            <span>Jquery</span>
-
-                        </a>
-
-                        <div class="sub-category">
-                            <div class="sub-category-item">Java Core</div>
-                            <div class="sub-category-item">Java OOP</div>
-                            <div class="sub-category-item">Java 8</div>
-                        </div>
-                    </li>
-                    
+						</li>
+					<?php 
+					} 
+					?>
                     <!-- ============================================= -->
                     <!-- 					 End Category 			   -->
                     <!-- ============================================= -->
@@ -209,120 +72,77 @@
     		<div class="row " style="height: 450px">
     			
     			<div class="col col-lg-7">
-    				<div class="latest-post">
-    					<div class="post-pic">
-    						<img src="Assets/images/homepage/latestpost.jpg" alt="">
-    					</div>
-    					<div class="post-details">
-    						<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span></p>
+					<?php
+					foreach($lastedposts as $lstpost) {
+					?>
+					
+						<div class="latest-post">
+							<div class="post-pic">
+								<img src="Assets/images/posts/<?= $lstpost['PostImage'] ?>" alt="">
+							</div>
+							<div class="post-details">
+								<p> <span><i class="far fa-calendar"></i><?= $lstpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span></p>
 
-    						<h1 class="post-title">Hướng dẫ lập trình đa luồng với Java</h1>
+								<h1 class="post-title"><?= $lstpost['title'] ?></h1>
 
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    					</div>
-    				</div>
+								<p class="post-intro"><?= $lstpost['PostDetails']?></p>
+								<button class="btn btn-danger">Read more </button>
+							</div>
+						</div>
+					<?php
+					}
+					?>
 
     			</div>	
     			<div class="col col-lg-5 ">
     				
     				<div class="top-post">
-    					
-    					<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/python.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
-    							<h3 class="post-title">Ngôn ngữ lập trình Python là gì?</h3>
+    					<?php
+							foreach($topposts as $tppost) {
+						?>
+							<div class="post-item">
+								<div class="post-pic">
+									<img src="Assets/images/posts/<?= $tppost['PostImage']?>" alt="">
+								</div>
+								<div class="post-details">
+									<p> <span><i class="far fa-calendar"></i><?= $tppost['PostingDate'] ?></span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
+									<h3 class="post-title"><?= $tppost['title'] ?></h3>
 
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						</div>
-    					</div>
-    					<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/python.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
-    							<h3 class="post-title">Ngôn ngữ lập trình Python là gì?</h3>
-
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						</div>
-    					</div>
-    					
+									<p class="post-intro"><?= $tppost['PostDetails']?></p>
+									<button class="btn btn-danger">Read more </button>
+								</div>
+							</div>
+    					<?php
+							}
+						?>
     				</div>
 
     			</div>
     		</div>
 
     		<div class="row top-view">
-    			<div class="col col-lg-3">
-    				<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/py.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span></p>
-    							<h3 class="post-title">Object Detection with Python</h3>
+    			
+				<?php
+					foreach($otherposts as $othpost) {
+				?>
+					<div class="col col-lg-3">
+						<div class="post-item">
+								<div class="post-pic">
+									<img src="Assets/images/posts/<?= $othpost['PostImage']?>" alt="">
+								</div>
+								<div class="post-details">
+									<p> <span><i class="far fa-calendar"></i><?= $othpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
+									<h3 class="post-title"><?= $othpost['title'] ?></h3>
 
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						
-    						</div>
-    				</div>
-
-    			</div>
-    			<div class="col col-lg-3">
-    				<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/py.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
-    							<h3 class="post-title">Object Detection with Python</h3>
-
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						
-    						</div>
-    				</div>
-    				
-    			</div>
-    			<div class="col col-lg-3">
-    				<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/py.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span></p>
-    							<h3 class="post-title">Object Detection with Python</h3>
-
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						
-    						</div>
-    				</div>
-    				
-    			</div>
-    			<div class="col col-lg-3">
-    				<div class="post-item">
-    						<div class="post-pic">
-    							<img src="Assets/images/homepage/py.jpg" alt="">
-    						</div>
-    						<div class="post-details">
-    							<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
-    							<h3 class="post-title">Object Detection with Python</h3>
-
-    						<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    						<button class="btn btn-danger">Read more </button>
-    						
-    						</div>
-    				</div>
-    				
-    			</div>
+									<p class="post-intro"><?= $othpost['PostDetails']?></p>
+									<button class="btn btn-danger">Read more </button>
+								</div>
+						</div>
+					</div>
+				<?php
+					}
+				?>
+    			
     		</div>
     	</div>
 
@@ -332,137 +152,25 @@
     <!-- Custom-post -->
 
     <div class="custom-post">
-    	<h3>Bài viết dành riêng cho bạn</h3>
+		<h3>Bài viết dành riêng cho bạn</h3>
+		<?php
+			foreach($randomposts as $rndpost) {
+		?>
     	<div class="post-item">
     		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
+				<img src="Assets/images/posts/<?= $rndpost['PostImage']?>" alt="">
     		</div>
     		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
+				<p> <span><i class="far fa-calendar"></i><?= $rndpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i>5</span><span><i class="fas fa-eye"></i>10</span> </p>
+				<h3 class="post-title"><?= $rndpost['title'] ?></h3>
 
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
+				<p class="post-intro"><?= $rndpost['PostDetails']?></p>
+				<button class="btn btn-danger">Read more </button>
+			</div>
     	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
-    	<div class="post-item">
-    		<div class="post-pic">
-    			<img src="Assets/images/homepage/py.jpg" alt="">
-    		</div>
-    		<div class="post-details">
-    			<p> <span><i class="far fa-calendar"></i>May 4,2019</span> <span><i class="far fa-comment"></i>5</span> <span><i class="fas fa-eye"></i>10</span> </p>
-    			<h3 class="post-title">Object Detection with Python</h3>
-
-    			<p class="post-intro">Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat...</p>
-    			<button class="btn btn-danger">Read more </button>
-    						
-    		</div>
-    	</div>
+		<?php
+			}
+		?>
 
     </div>
 
