@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Vendor/css/customhomepage.css">
 
 	<!-- Common function -->
-	<?php include('includes/Common.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Common.php");?>
 	<!--  -->
 
     <title>Trang chủ || Tin tức 24h</title>
@@ -17,7 +17,7 @@
 <body>     
 
 	<!-- Header -->
-	<?php include('includes/Header.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Header.php");?>
 	<!-- End Header -->
 
     <div class="main-content">
@@ -153,7 +153,7 @@
     <!-- end custom post -->
 
 	<!-- Footer -->
-	<?php include('includes/Footer.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Footer.php");?>
 	<!-- End -->
 
     <script src="Vendor/js/customhomepage.js"></script>							

@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="Vendor/css/postbycategory.css" type="text/css">
 
     <!-- Common function -->
-    <?php include('includes/Common.php'); ?>
+    <?php include(SYSTEM_PATH."/View/Home/Includes/Common.php");?>
 	<!--  -->
 
     <title>Danh mục || Tin tức 24h</title>
 </head>
 <body>
 	<!-- Header -->
-	<?php include('includes/Header.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Header.php");?>
 	<!-- End Header -->
 
            
@@ -32,7 +32,7 @@
 
             <div class="row">
                 <!-- Sidebar -->
-                <?php include('includes/LeftBar.php'); ?>
+                <?php include(SYSTEM_PATH."/View/Home/Includes/LeftBar.php");?>
                 <!-- end sidebar -->
 
                 <!-- postitem -->
@@ -81,7 +81,7 @@
     <!-- end custom post -->
 
     <!-- Footer -->
-	<?php include('includes/Footer.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Footer.php");?>
     <!-- End -->
     
     <script src="Vendor/js/customhomepage.js"></script>							

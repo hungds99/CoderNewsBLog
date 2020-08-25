@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Header -->
-    <?php include('includes/Header.php'); ?>
+    <?php include(SYSTEM_PATH."/View/Home/Includes/Header.php");?>
     <!-- End Header -->
 
            
@@ -102,7 +102,7 @@
     <!-- end custom post -->
 
     <!-- Footer -->
-	<?php include('includes/Footer.php'); ?>
+	<?php include(SYSTEM_PATH."/View/Home/Includes/Footer.php");?>
 	<!-- End -->
 
     <script src="Vendor/js/customhomepage.js"></script>	

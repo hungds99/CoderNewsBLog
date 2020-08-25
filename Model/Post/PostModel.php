@@ -101,13 +101,13 @@
         }
 
         function GetPostByCategory($categoryId) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1";
+            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 LIMIT 6";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetPostBySearch($search) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1";
+            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
