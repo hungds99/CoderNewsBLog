@@ -97,7 +97,7 @@
                     $imgnewfile = md5($imgfile) . $extension;
 
                     // Lưu hình ảnh vào thư mục
-                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "assets/images/posts/" . $imgnewfile);
+                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "Vendor/images/posts/" . $imgnewfile);
 
                     $status = 1;
                     $result = $this->postModel->AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile);
@@ -143,7 +143,7 @@
                     $imgnewfile = md5($imgfile) . $extension;
 
                     // Lưu hình ảnh vào thư mục
-                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "assets/images/posts/" . $imgnewfile);
+                    move_uploaded_file($_FILES["postimage"]["tmp_name"], "Vendor/images/posts/" . $imgnewfile);
         
                     $postid = intval($_GET['id']);
                     $result = $this->postModel->ChangeImage($imgnewfile, $postid);

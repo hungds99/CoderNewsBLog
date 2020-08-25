@@ -2,25 +2,6 @@
 if (strlen($_SESSION['login']) == 0) {
     header('location: index.php?c=Admin&a=LoginPage');
 } else {
-    // if ($_GET['disid']) {
-    //     $id = intval($_GET['disid']);
-    //     $query = mysqli_query($con, "update tblcomments set status='0' where id='$id'");
-    //     $msg = "Bình luận chưa được chập nhận !";
-    // }
-    // // Code for restore
-    // if ($_GET['appid']) {
-    //     $id = intval($_GET['appid']);
-    //     $query = mysqli_query($con, "update tblcomments set status='1' where id='$id'");
-    //     $msg = "Bình luận đã được chấp nhận !";
-    // }
-
-    // // Code for deletion
-    // if ($_GET['action'] == 'del' && $_GET['rid']) {
-    //     $id = intval($_GET['rid']);
-    //     $query = mysqli_query($con, "delete from  tblcomments  where id='$id'");
-    //     $delmsg = "Bình luận đã bị xóa vĩnh viễn !";
-    // }
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -28,15 +9,15 @@ if (strlen($_SESSION['login']) == 0) {
     <head>
 
         <title>Coder News | Quản lý bình luận</title>
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="Vendor/js/modernizr.min.js"></script>
 
     </head>
 
@@ -47,10 +28,10 @@ if (strlen($_SESSION['login']) == 0) {
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-            <?php include('includes/topheader.php'); ?>
+            <?php include(SYSTEM_PATH."/View/Admin/Includes/Header.php");?>
 
             <!-- ========== Left Sidebar Start ========== -->
-            <?php include('includes/leftsidebar.php'); ?>
+            <?php include(SYSTEM_PATH."/View/Admin/Includes/Leftsidebar.php");?>
             <!-- Left Sidebar End -->
 
 
@@ -209,7 +190,7 @@ if (strlen($_SESSION['login']) == 0) {
                         </div> <!-- container -->
 
                     </div> <!-- content -->
-                    <?php include('includes/footer.php'); ?>
+                    <?php include(SYSTEM_PATH."/View/Admin/Includes/Footer.php");?>
                 </div>
 
             </div>
@@ -222,19 +203,19 @@ if (strlen($_SESSION['login']) == 0) {
             </script>
 
             <!-- jQuery  -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/bootstrap.min.js"></script>
-            <script src="assets/js/detect.js"></script>
-            <script src="assets/js/fastclick.js"></script>
-            <script src="assets/js/jquery.blockUI.js"></script>
-            <script src="assets/js/waves.js"></script>
-            <script src="assets/js/jquery.slimscroll.js"></script>
-            <script src="assets/js/jquery.scrollTo.min.js"></script>
+            <script src="Vendor/js/jquery.min.js"></script>
+            <script src="Vendor/js/bootstrap.min.js"></script>
+            <script src="Vendor/js/detect.js"></script>
+            <script src="Vendor/js/fastclick.js"></script>
+            <script src="Vendor/js/jquery.blockUI.js"></script>
+            <script src="Vendor/js/waves.js"></script>
+            <script src="Vendor/js/jquery.slimscroll.js"></script>
+            <script src="Vendor/js/jquery.scrollTo.min.js"></script>
             <script src="../plugins/switchery/switchery.min.js"></script>
 
             <!-- App js -->
-            <script src="assets/js/jquery.core.js"></script>
-            <script src="assets/js/jquery.app.js"></script>
+            <script src="Vendor/js/jquery.core.js"></script>
+            <script src="Vendor/js/jquery.app.js"></script>
 
     </body>
 

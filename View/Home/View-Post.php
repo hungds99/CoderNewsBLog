@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="Vendor/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     
-    <link rel="stylesheet" href="Assets/css/viewpost.css" type="text/css">
+    <link rel="stylesheet" href="Vendor/css/viewpost.css" type="text/css">
 
     <title>Đọc bài viết || Tin tức 24h</title>
 </head>
@@ -43,7 +43,7 @@
                                 <span><i class="fas fa-eye"></i>10</span>
                             </p>
                             <p class="post-author"> <span><i class="fas fa-at"></i></span> hoangvu</p>
-                            <img src="Assets/images/posts/<?=$p["PostImage"]?>" class="post-img" alt="" srcset="">
+                            <img src="Vendor/images/posts/<?=$p["PostImage"]?>" class="post-img" alt="" srcset="">
                             <p class="post-text">
                                 <?=$p["PostDetails"]?>
                             </p>
@@ -76,7 +76,7 @@
                             ?>
                                 <div class="comment-item">
                                     <div class="pic">
-                                        <img src="Assets/images/users/avatar-1.jpg" alt="">
+                                        <img src="Vendor/images/users/avatar-1.jpg" alt="">
                                     </div>
                                     <div class="comment-text">
                                         <h4><Strong><?=$comment['name']?></Strong></h4>
@@ -105,7 +105,7 @@
 	<?php include('includes/Footer.php'); ?>
 	<!-- End -->
 
-    <script src="Assets/js/customhomepage.js"></script>	
-    <script src="Assets/js/post/addcomment.js"></script>						
+    <script src="Vendor/js/customhomepage.js"></script>	
+    <script src="Vendor/js/post/addcomment.js"></script>						
 </body>
 </html>

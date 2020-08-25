@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="Vendor/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="Assets/css/customhomepage.css">
+    <link rel="stylesheet" href="Vendor/css/customhomepage.css">
 
 	<!-- Common function -->
 	<?php include('includes/Common.php'); ?>
@@ -38,7 +38,7 @@
 					
 						<div class="latest-post">
 							<div class="post-pic">
-								<img src="Assets/images/posts/<?= $lstpost['PostImage'] ?>" alt="">
+								<img src="Vendor/images/posts/<?= $lstpost['PostImage'] ?>" alt="">
 							</div>
 							<div class="post-details">
 								<p> <span><i class="far fa-calendar"></i> <?= $lstpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span> <span><i class="fas fa-eye"></i> 10</span></p>
@@ -66,7 +66,7 @@
 						?>
 							<div class="post-item">
 								<div class="post-pic">
-									<img src="Assets/images/posts/<?= $tppost['PostImage']?>" alt="">
+									<img src="Vendor/images/posts/<?= $tppost['PostImage']?>" alt="">
 								</div>
 								<div class="post-details">
 									<p> <span><i class="far fa-calendar"></i> <?= $tppost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
@@ -96,7 +96,7 @@
 					<div class="col col-lg-3">
 						<div class="post-item">
 								<div class="post-pic">
-									<img src="Assets/images/posts/<?= $othpost['PostImage']?>" alt="">
+									<img src="Vendor/images/posts/<?= $othpost['PostImage']?>" alt="">
 								</div>
 								<div class="post-details">
 									<p> <span><i class="far fa-calendar"></i> <?= $othpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span> </p>
@@ -130,7 +130,7 @@
 		?>
     	<div class="post-item">
     		<div class="post-pic">
-				<img src="Assets/images/posts/<?= $rndpost['PostImage']?>" alt="">
+				<img src="Vendor/images/posts/<?= $rndpost['PostImage']?>" alt="">
     		</div>
     		<div class="post-details">
 				<p> <span><i class="far fa-calendar"></i> <?= $rndpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
@@ -156,6 +156,6 @@
 	<?php include('includes/Footer.php'); ?>
 	<!-- End -->
 
-    <script src="Assets/js/customhomepage.js"></script>							
+    <script src="Vendor/js/customhomepage.js"></script>							
 </body>
 </html>

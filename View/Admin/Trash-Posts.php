@@ -14,7 +14,7 @@ if (strlen($_SESSION['login']) == 0) {
         <meta name="author" content="Coderthemes">
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="Vendor/images/favicon.ico">
         <!-- App title -->
         <title>Bài viết | Bài viết bị xóa</title>
 
@@ -25,16 +25,16 @@ if (strlen($_SESSION['login']) == 0) {
         <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 
         <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
 
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="Vendor/js/modernizr.min.js"></script>
 
     </head>
 
@@ -45,10 +45,10 @@ if (strlen($_SESSION['login']) == 0) {
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-            <?php include('includes/topheader.php'); ?>
+            <?php include(SYSTEM_PATH."/View/Admin/Includes/Header.php");?>
 
             <!-- ========== Left Sidebar Start ========== -->
-            <?php include('includes/leftsidebar.php'); ?>
+            <?php include(SYSTEM_PATH."/View/Admin/Includes/Leftsidebar.php");?>
 
 
             <!-- ============================================================== -->
@@ -144,7 +144,7 @@ if (strlen($_SESSION['login']) == 0) {
 
                     </div> <!-- content -->
 
-                    <?php include('includes/footer.php'); ?>
+                    <?php include(SYSTEM_PATH."/View/Admin/Includes/Footer.php");?>
 
                 </div>
 
@@ -164,14 +164,14 @@ if (strlen($_SESSION['login']) == 0) {
             </script>
 
             <!-- jQuery  -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/bootstrap.min.js"></script>
-            <script src="assets/js/detect.js"></script>
-            <script src="assets/js/fastclick.js"></script>
-            <script src="assets/js/jquery.blockUI.js"></script>
-            <script src="assets/js/waves.js"></script>
-            <script src="assets/js/jquery.slimscroll.js"></script>
-            <script src="assets/js/jquery.scrollTo.min.js"></script>
+            <script src="Vendor/js/jquery.min.js"></script>
+            <script src="Vendor/js/bootstrap.min.js"></script>
+            <script src="Vendor/js/detect.js"></script>
+            <script src="Vendor/js/fastclick.js"></script>
+            <script src="Vendor/js/jquery.blockUI.js"></script>
+            <script src="Vendor/js/waves.js"></script>
+            <script src="Vendor/js/jquery.slimscroll.js"></script>
+            <script src="Vendor/js/jquery.scrollTo.min.js"></script>
             <script src="plugins/switchery/switchery.min.js"></script>
 
             <!-- CounterUp  -->
@@ -190,11 +190,11 @@ if (strlen($_SESSION['login']) == 0) {
 
 
             <!-- Dashboard Init js -->
-            <script src="assets/pages/jquery.blog-dashboard.js"></script>
+            <script src="Vendor/pages/jquery.blog-dashboard.js"></script>
 
             <!-- App js -->
-            <script src="assets/js/jquery.core.js"></script>
-            <script src="assets/js/jquery.app.js"></script>
+            <script src="Vendor/js/jquery.core.js"></script>
+            <script src="Vendor/js/jquery.app.js"></script>
 
     </body>
 

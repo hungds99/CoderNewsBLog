@@ -43,7 +43,7 @@
         }
 
         function GetRandomPost() {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY RAND()";
+            $query = "SELECT tblposts.id as postid, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY RAND() LIMIT 5";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
