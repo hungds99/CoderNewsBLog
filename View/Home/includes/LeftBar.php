@@ -19,7 +19,7 @@
                     <img class="post-img" src="Vendor/images/posts/<?=$lpost['PostImage']?>" alt="" style="object-fit: contain;">
                 </div>
                 <div class="post-details">
-                <p> <span><i class="far fa-calendar"></i> <?=$lpost['PostingDate']?></span> <span><i class="far fa-comment"></i> 5</span></p>
+                <p> <span><i class="far fa-calendar"></i> <?=$lpost['PostingDate']?></span> <span><i class="far fa-comment"></i> <?=$lpost['CountComment']?></span></p>
                 <h5> <strong><a style="color: black;" href="index.php?c=Home&a=ViewPost&id=<?=$lpost['postid']?>"><?=$lpost['title']?></a></strong> </h5>
                 </div>
             </div>

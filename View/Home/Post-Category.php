@@ -48,7 +48,7 @@
                                             <img src="Vendor/images/posts/<?=$post['PostImage']?>" alt="">
                                         </div>
                                         <div class="post-details">
-                                            <p> <span><i class="far fa-calendar"></i> <?= $post['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
+                                            <p> <span><i class="far fa-calendar"></i> <?= $post['PostingDate'] ?></span> <span><i class="far fa-comment"></i> <?= $post['CountComment'] ?></span><span><i class="fas fa-eye"></i> <?= $post['CountView'] ?></span> </p>
                                             <h4 class="post-title"><?= $post['title'] ?></h4>
 
                                             <p class="post-intro">

@@ -31,19 +31,19 @@
         }
 
         function GetPost($id) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.id='$id' AND tblposts.Is_Active=1";
+            $query = "SELECT tblposts.id as postid,tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.id='$id' AND tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetLastedPost() {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 7";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 7";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetRandomPost() {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY RAND() LIMIT 5";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate , tblposts.PostDetails,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 ORDER BY RAND() LIMIT 5";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -101,36 +101,41 @@
         }
 
         function GetPostByCategory($categoryId) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 LIMIT 6";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 LIMIT 6";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetPostBySearch($search) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetPostLastestBySearch($search) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
         function GetPostLastestByCategory($categoryId) {
-            $query = "SELECT tblposts.id as postid, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
-        function updateView($postid){
-            $query = "update tblposts p set count_view = p.count_view+1 where id='$postid'";
+        function UpdateCountView($postid){
+            $query = "UPDATE tblposts p SET CountView = p.CountView+1 WHERE id='$postid'";
             mysqli_query($this->conn, $query);
         }
     
-        function updateComment($postid){
-            $query = "update tblposts p set count_comment = p.count_comment+1 where id='$postid'";
+        function UpdateCountCommentASC($postid){
+            $query = "UPDATE tblposts p SET CountComment = p.CountComment+1 WHERE id='$postid'";
+            mysqli_query($this->conn, $query);
+        }
+
+        function UpdateCountCommentDESC($postid) {
+            $query = "UPDATE tblposts p SET CountComment = p.CountComment-1 WHERE id='$postid'";
             mysqli_query($this->conn, $query);
         }
 

@@ -126,7 +126,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                                     <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Hủy bình luận" onclick="return confirm('Bạn có muốn hủy bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
                                                                 <?php endif; ?>
 
-                                                                &nbsp;<a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                                &nbsp;<a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>&pid=<?=$comment['postid']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                         </tr>
                                                     <?php
                                                     } ?>

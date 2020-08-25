@@ -38,11 +38,11 @@
                         <div>
                             <h1 class="text text-center post-title"> <Strong><?=$p["title"]?></Strong> </h1>
                             <p>
-                                <span><i class="far fa-calendar"></i><?=$p["PostingDate"]?></span> 
-                                <span><i class="far fa-comment"></i>5</span> 
-                                <span><i class="fas fa-eye"></i>10</span>
+                                <span><i class="far fa-calendar"></i> <?=$p["PostingDate"]?></span> 
+                                <span><i class="far fa-comment"></i> <?=$p["CountComment"]?></span> 
+                                <span><i class="fas fa-eye"></i> <?=$p["CountView"]?></span>
                             </p>
-                            <p class="post-author"> <span><i class="fas fa-at"></i></span> hoangvu</p>
+                            <p class="post-author"> <span><i class="fas fa-at"></i></span> Admin</p>
                             <img src="Vendor/images/posts/<?=$p["PostImage"]?>" class="post-img" alt="" srcset="">
                             <p class="post-text">
                                 <?=$p["PostDetails"]?>
@@ -106,6 +106,6 @@
 	<!-- End -->
 
     <script src="Vendor/js/customhomepage.js"></script>	
-    <script src="Vendor/js/post/addcomment.js"></script>						
+    <!-- <script src="Vendor/js/post/addcomment.js"></script>						 -->
 </body>
 </html>

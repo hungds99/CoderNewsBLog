@@ -70,7 +70,10 @@
                 $post = $this->postModel->GetPost($post_id);
                 $comments = $this->commentModel->GetPostComments($post_id);
                 $categories = $this->categoryModel->GetCategories();
-                $this->postModel->updateView($post_id);
+                
+                // Cập nhật số lượng lượt xem
+                $this->postModel->UpdateCountView($post_id);
+                
                 require_once SYSTEM_PATH."/View/Home/View-Post.php";
             }
         }

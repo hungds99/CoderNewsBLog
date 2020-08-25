@@ -41,7 +41,7 @@
 								<img src="Vendor/images/posts/<?= $lstpost['PostImage'] ?>" alt="">
 							</div>
 							<div class="post-details">
-								<p> <span><i class="far fa-calendar"></i> <?= $lstpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span> <span><i class="fas fa-eye"></i> 10</span></p>
+								<p> <span><i class="far fa-calendar"></i> <?= $lstpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> <?= $lstpost['CountComment'] ?></span> <span><i class="fas fa-eye"></i> <?= $lstpost['CountView'] ?></span></p>
 
 								<h4 class="post-title"><?= $lstpost['title'] ?></h4>
 
@@ -69,7 +69,7 @@
 									<img src="Vendor/images/posts/<?= $tppost['PostImage']?>" alt="">
 								</div>
 								<div class="post-details">
-									<p> <span><i class="far fa-calendar"></i> <?= $tppost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
+									<p> <span><i class="far fa-calendar"></i> <?= $tppost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> <?= $tppost['CountComment'] ?></span><span><i class="fas fa-eye"></i> <?= $tppost['CountView'] ?></span> </p>
 									<h4 class="post-title"><?= $tppost['title'] ?></h4>
 
 									<p class="post-intro">
@@ -99,7 +99,7 @@
 									<img src="Vendor/images/posts/<?= $othpost['PostImage']?>" alt="">
 								</div>
 								<div class="post-details">
-									<p> <span><i class="far fa-calendar"></i> <?= $othpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span> </p>
+									<p> <span><i class="far fa-calendar"></i> <?= $othpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> <?= $othpost['CountComment'] ?></span><span><i class="fas fa-eye"></i> <?= $othpost['CountView'] ?></span></p>
 									<h4 class="post-title"><?= $othpost['title'] ?></h4>
 
 									<p class="post-intro">
@@ -133,7 +133,7 @@
 				<img src="Vendor/images/posts/<?= $rndpost['PostImage']?>" alt="">
     		</div>
     		<div class="post-details">
-				<p> <span><i class="far fa-calendar"></i> <?= $rndpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> 5</span><span><i class="fas fa-eye"></i> 10</span> </p>
+				<p><span><i class="far fa-calendar"></i> <?= $rndpost['PostingDate'] ?></span> <span><i class="far fa-comment"></i> <?= $rndpost['CountComment'] ?></span><span><i class="fas fa-eye"></i> <?= $rndpost['CountView'] ?></span> </p>
 				<h4 class="post-title"><?= $rndpost['title'] ?></h4>
 
 				<p class="post-intro">

@@ -52,6 +52,8 @@ CREATE TABLE `tblposts` (
         REFERENCES tblcategory (`id`)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
+ALTER TABLE `tblposts` ADD CountView int DEFAULT 0;
+ALTER TABLE `tblposts` ADD CountComment int DEFAULT 0;
 
 CREATE TABLE `tblcomments` (
   `id` int(11) NOT NULL auto_increment,

@@ -5,6 +5,7 @@
     class CommentController {
         public $commentModel;
         public $postModel;
+
         public function __construct()
         {
             $this->commentModel = new CommentModel();
@@ -15,8 +16,11 @@
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $this->commentModel->ApproveComment($id);
-                $postId = $this->commentModel->GetPostIdByCommentId($id)['postId'];
-                $this->postModel->updateComment($postId);
+
+                // Cập nhật lượt comment tăng
+                $postId = $this->commentModel->GetPostIdByCommentId($id);
+                $this->postModel->UpdateCountCommentASC($postId['postId']);
+
                 header("location: index.php?c=Comment&a=Disapprove&s=true");
             } else {
                 $comments = $this->commentModel->GetApproveComments();
@@ -24,12 +28,15 @@
             }
         }
 
-        
-
         function Disapprove() {
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $this->commentModel->DisapproveComment($id);
+
+                // Cập nhật lượt comment giảm
+                $postId = $this->commentModel->GetPostIdByCommentId($id);
+                $this->postModel->UpdateCountCommentDESC($postId['postId']);
+
                 header("location: index.php?c=Comment&a=Approve&s=true");
             } else {
                 $comments = $this->commentModel->GetDisApproveComments();
@@ -41,6 +48,13 @@
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
                 $this->commentModel->DeleteComment($id);
+
+                 // Cập nhật lượt comment giảm
+                if (isset($_GET['pid'])) {
+                    $postId = $_GET['pid'];
+                    $this->postModel->UpdateCountCommentDESC($postId);
+                }
+
                 header("location: index.php?c=Comment&a=Approve&s=true");
             }
         }
