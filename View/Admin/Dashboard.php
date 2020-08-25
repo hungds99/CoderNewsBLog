@@ -15,7 +15,7 @@ if (strlen($_SESSION['login']) == 0) {
     <meta name="author" content="Hung Dinh">
     <!-- App title -->
     <title>Dashboard | Trang chủ</title>
-    <link rel="stylesheet" href="plugins/morris/morris.css">
+    <link rel="stylesheet" href="Assets/morris/morris.css">
 
     <!-- App css -->
     <link href="Vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@ if (strlen($_SESSION['login']) == 0) {
     <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
     <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
+    <link rel="stylesheet" href="Assets/switchery/switchery.min.css">
     <script src="Vendor/js/modernizr.min.js"></script>
 
 </head>
@@ -149,15 +149,15 @@ if (strlen($_SESSION['login']) == 0) {
     <script src="Vendor/js/waves.js"></script>
     <script src="Vendor/js/jquery.slimscroll.js"></script>
     <script src="Vendor/js/jquery.scrollTo.min.js"></script>
-    <script src="plugins/switchery/switchery.min.js"></script>
+    <script src="Assets/switchery/switchery.min.js"></script>
 
     <!-- Counter js  -->
-    <script src="plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="Assets/waypoints/jquery.waypoints.min.js"></script>
+    <script src="Assets/counterup/jquery.counterup.min.js"></script>
 
     <!--Morris Chart-->
-    <script src="plugins/morris/morris.min.js"></script>
-    <script src="plugins/raphael/raphael-min.js"></script>
+    <script src="Assets/morris/morris.min.js"></script>
+    <script src="Assets/raphael/raphael-min.js"></script>
 
     <!-- Dashboard init -->
     <script src="Vendor/pages/jquery.dashboard.js"></script>

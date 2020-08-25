@@ -19,10 +19,10 @@ if (strlen($_SESSION['login']) == 0) {
         <title>Bài viết | Quản lý</title>
 
         <!--Morris Chart CSS -->
-        <link rel="stylesheet" href="plugins/morris/morris.css">
+        <link rel="stylesheet" href="Assets/morris/morris.css">
 
         <!-- jvectormap -->
-        <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+        <link href="Assets/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 
         <!-- App css -->
         <link href="Vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,7 +32,7 @@ if (strlen($_SESSION['login']) == 0) {
         <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
+        <link rel="stylesheet" href="Assets/switchery/switchery.min.css">
 
         <script src="Vendor/js/modernizr.min.js"></script>
 
@@ -161,21 +161,21 @@ if (strlen($_SESSION['login']) == 0) {
         <script src="Vendor/js/waves.js"></script>
         <script src="Vendor/js/jquery.slimscroll.js"></script>
         <script src="Vendor/js/jquery.scrollTo.min.js"></script>
-        <script src="plugins/switchery/switchery.min.js"></script>
+        <script src="Assets/switchery/switchery.min.js"></script>
 
         <!-- CounterUp  -->
-        <script src="plugins/waypoints/jquery.waypoints.min.js"></script>
-        <script src="plugins/counterup/jquery.counterup.min.js"></script>
+        <script src="Assets/waypoints/jquery.waypoints.min.js"></script>
+        <script src="Assets/counterup/jquery.counterup.min.js"></script>
 
         <!--Morris Chart-->
-        <script src="plugins/morris/morris.min.js"></script>
-        <script src="plugins/raphael/raphael-min.js"></script>
+        <script src="Assets/morris/morris.min.js"></script>
+        <script src="Assets/raphael/raphael-min.js"></script>
 
         <!-- Load page level scripts-->
-        <script src="plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="plugins/jvectormap/gdp-data.js"></script>
-        <script src="plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="Assets/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="Assets/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="Assets/jvectormap/gdp-data.js"></script>
+        <script src="Assets/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
 
 
         <!-- Dashboard Init js -->

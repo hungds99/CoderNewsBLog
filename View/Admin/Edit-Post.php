@@ -18,14 +18,14 @@ if (strlen($_SESSION['login']) == 0) {
         <title>Bài viết | Sửa bài viết</title>
 
         <!-- Summernote css -->
-        <link href="plugins/summernote/summernote.css" rel="stylesheet" />
+        <link href="Assets/summernote/summernote.css" rel="stylesheet" />
 
         <!-- Select2 -->
-        <link href="plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="Assets/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Jquery filer css -->
-        <link href="plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-        <link href="plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+        <link href="Assets/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
+        <link href="Assets/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
 
         <!-- App css -->
         <link href="Vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@ if (strlen($_SESSION['login']) == 0) {
         <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
+        <link rel="stylesheet" href="Assets/switchery/switchery.min.css">
         <script src="Vendor/js/modernizr.min.js"></script>
     </head>
 
@@ -186,14 +186,14 @@ if (strlen($_SESSION['login']) == 0) {
         <script src="Vendor/js/waves.js"></script>
         <script src="Vendor/js/jquery.slimscroll.js"></script>
         <script src="Vendor/js/jquery.scrollTo.min.js"></script>
-        <script src="plugins/switchery/switchery.min.js"></script>
+        <script src="Assets/switchery/switchery.min.js"></script>
 
         <!--Summernote js-->
-        <script src="plugins/summernote/summernote.min.js"></script>
+        <script src="Assets/summernote/summernote.min.js"></script>
         <!-- Select 2 -->
-        <script src="plugins/select2/js/select2.min.js"></script>
+        <script src="Assets/select2/js/select2.min.js"></script>
         <!-- Jquery filer js -->
-        <script src="plugins/jquery.filer/js/jquery.filer.min.js"></script>
+        <script src="Assets/jquery.filer/js/jquery.filer.min.js"></script>
 
         <!-- page specific js -->
         <script src="Vendor/pages/jquery.blog-add.init.js"></script>
@@ -219,10 +219,10 @@ if (strlen($_SESSION['login']) == 0) {
                 });
             });
         </script>
-        <script src="plugins/switchery/switchery.min.js"></script>
+        <script src="Assets/switchery/switchery.min.js"></script>
 
         <!--Summernote js-->
-        <script src="plugins/summernote/summernote.min.js"></script>
+        <script src="Assets/summernote/summernote.min.js"></script>
     </body>
 
     </html>

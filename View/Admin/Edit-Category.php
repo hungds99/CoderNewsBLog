@@ -18,7 +18,7 @@ if (strlen($_SESSION['login']) == 0) {
         <link href="Vendor/css/pages.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="Vendor/css/responsive.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
+        <link rel="stylesheet" href="../Assets/switchery/switchery.min.css">
         <script src="Vendor/js/modernizr.min.js"></script>
 
     </head>
@@ -153,7 +153,7 @@ if (strlen($_SESSION['login']) == 0) {
         <script src="Vendor/js/waves.js"></script>
         <script src="Vendor/js/jquery.slimscroll.js"></script>
         <script src="Vendor/js/jquery.scrollTo.min.js"></script>
-        <script src="plugins/switchery/switchery.min.js"></script>
+        <script src="Assets/switchery/switchery.min.js"></script>
 
         <!-- App js -->
         <script src="Vendor/js/jquery.core.js"></script>
