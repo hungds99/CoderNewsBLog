@@ -52,4 +52,10 @@
                 return 2;
             }
         }
+
+        function GetPostIdByCommentId($id){
+            $query = "SELECT postId from tblcomments where id = '$id'";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1)[0];
+        }
     }

@@ -124,4 +124,14 @@
             return $result->fetch_all(1);
         }
 
+        function updateView($postid){
+            $query = "update tblposts p set count_view = p.count_view+1 where id='$postid'";
+            mysqli_query($this->conn, $query);
+        }
+    
+        function updateComment($postid){
+            $query = "update tblposts p set count_comment = p.count_comment+1 where id='$postid'";
+            mysqli_query($this->conn, $query);
+        }
+
     }
