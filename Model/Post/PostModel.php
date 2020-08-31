@@ -31,6 +31,9 @@
         }
 
         function GetPost($id) {
+            // Cập nhật số lượng lượt xem
+            // Cập nhập trước rồi mới load ra
+            $this->UpdateCountView($id);
             $query = "SELECT tblposts.id as postid,tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.id='$id' AND tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);

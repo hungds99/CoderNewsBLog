@@ -71,8 +71,7 @@
                 $comments = $this->commentModel->GetPostComments($post_id);
                 $categories = $this->categoryModel->GetCategories();
                 
-                // Cập nhật số lượng lượt xem
-                $this->postModel->UpdateCountView($post_id);
+                
                 
                 require_once SYSTEM_PATH."/View/Home/View-Post.php";
             }
