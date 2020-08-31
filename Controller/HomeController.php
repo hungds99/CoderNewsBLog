@@ -57,8 +57,19 @@
         function GetPostCat() {
             $categories = $this->categoryModel->GetCategories();
             if (isset($_GET['id'])) {
+
+
+
                 $category_id = intval($_GET['id']);
-                $posts = $this->postModel->GetPostByCategory($category_id);
+                $currentPage = empty($_GET["page"])? 1:$_GET["page"];
+                
+
+                $offset = 4*$currentPage-4;
+
+                $lastPageNumber = $this->postModel->GetLastPageNumber($category_id);
+                
+                
+                $posts = $this->postModel->GetPostByCategory($category_id,$offset);
                 $postlst = $this->postModel->GetPostLastestByCategory($category_id);
                 require_once SYSTEM_PATH."/View/Home/Post-Category.php";
             }

@@ -65,6 +65,18 @@
                             ?>
                         </div>
 
+                        <div class="pagination">
+                               
+                                    <ul class="pageNav-main">
+                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=1">First</a></li>
+                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="fas fa-chevron-left"></i></a></li>
+                                        <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
+                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="fas fa-chevron-right"></i></a></li>
+                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$lastPageNumber?>">Last</a></li>
+                                    </ul>
+                                
+                        </div>
+
                 </div>
                 <!-- end postitem -->
             </div>

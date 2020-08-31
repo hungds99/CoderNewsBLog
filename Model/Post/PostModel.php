@@ -103,8 +103,8 @@
             }
         }
 
-        function GetPostByCategory($categoryId) {
-            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 LIMIT 6";
+        function GetPostByCategory($categoryId,$offset) {
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.CategoryId='$categoryId' AND tblposts.Is_Active=1 LIMIT 4 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -140,6 +140,13 @@
         function UpdateCountCommentDESC($postid) {
             $query = "UPDATE tblposts p SET CountComment = p.CountComment-1 WHERE id='$postid'";
             mysqli_query($this->conn, $query);
+        }
+
+        function GetLastPageNumber($categoryId){
+            $query = "select count(id) from tblposts where CategoryId = '$categoryId'";
+            $result = mysqli_query($this->conn, $query);
+            $lastPageNumber = $result->fetch_all()[0][0];
+            return ceil($lastPageNumber/4);
         }
 
     }
