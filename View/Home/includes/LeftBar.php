@@ -26,20 +26,8 @@
         <?php
             }
         ?>
-
     </div>
     <!-- end recent post -->
-
-    <!-- tag -->
-    <h3><Strong>Tags</Strong></h3>
-        <div class="tags">
-            <a href="#" class="tag-item">Java</a>
-            <a href="#" class="tag-item">Spring</a>
-            <a href="#" class="tag-item">Python</a>
-            <a href="#" class="tag-item">AI</a>
-            <a href="#" class="tag-item">C</a>
-        </div>
-    <!-- end tag -->
 
     </div>
     

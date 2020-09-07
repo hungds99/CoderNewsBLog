@@ -124,7 +124,7 @@
     <!-- Custom-post -->
 
     <div class="custom-post">
-		<h3>Bài viết dành riêng cho bạn</h3>
+		<h3>Bài viết ngẫu nhiên</h3>
 		<?php
 			foreach($randomposts as $rndpost) {
 		?>

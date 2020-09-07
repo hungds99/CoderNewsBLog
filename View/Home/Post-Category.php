@@ -24,12 +24,18 @@
     <div class="main-content">
     	<div class="container-fluid">
     		
-    		<div class="row ">
-    			<div class="col col-lg-12 ">
-    				<h3>Kết quả </h3>
-    			</div>
-    		</div>
-
+            <?php
+                if (isset($_GET['q'])) {
+            ?>
+            <div class="row ">
+                <div class="col col-lg-12 ">
+                    <h3>Kết quả </h3>
+                </div>
+            </div>
+            <?php
+                }
+            ?>
+    			
             <div class="row">
                 <!-- Sidebar -->
                 <?php include(SYSTEM_PATH."/View/Home/Includes/LeftBar.php");?>
@@ -66,15 +72,13 @@
                         </div>
 
                         <div class="pagination">
-                               
-                                    <ul class="pageNav-main">
-                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=1">First</a></li>
-                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="fas fa-chevron-left"></i></a></li>
-                                        <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
-                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="fas fa-chevron-right"></i></a></li>
-                                        <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$lastPageNumber?>">Last</a></li>
-                                    </ul>
-                                
+                            <ul class="pageNav-main">
+                                <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=1">First</a></li>
+                                <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="fas fa-chevron-left"></i></a></li>
+                                <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
+                                <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="fas fa-chevron-right"></i></a></li>
+                                <li> <a href="http://localhost/Web_Tin_Tuc/index.php?c=Home&a=GetPostCat&id=<?=$category_id?>&page=<?=$lastPageNumber?>">Last</a></li>
+                            </ul>
                         </div>
 
                 </div>
