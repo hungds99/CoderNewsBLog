@@ -60,10 +60,10 @@
                     <!-- comment -->
                     <form action="index.php?c=Home&a=Comment&id=<?=$_GET['id']?>" method="post">
                             <div class="form-group form-inline">
-                                <input type="text" class="form-control cmt_name" name="name" id="cmt_name" placeholder="Nhập tên*">
-                                <input type="text" class="form-control cmt_email" name="email" id="cmt_email" placeholder="Nhập Email*">
+                                <input type="text" class="form-control cmt_name" name="name" id="cmt_name" placeholder="Nhập tên*" required>
+                                <input type="email" class="form-control cmt_email" name="email" id="cmt_email" placeholder="Nhập Email*" require>
                             </div>
-                            <textarea class="comment-area" name="comment" id="comment-area" style="padding: 15px;"></textarea>
+                            <textarea class="comment-area" name="comment" id="comment-area" style="padding: 15px;" required></textarea>
                             
                             <button class="btn btn-danger" id="btn-addcoment" name="submit" type="submit">Bình luận</button>
                         </form>

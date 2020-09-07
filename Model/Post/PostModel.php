@@ -145,5 +145,4 @@
             $lastPageNumber = $result->fetch_all()[0][0];
             return ceil($lastPageNumber/4);
         }
-
     }
