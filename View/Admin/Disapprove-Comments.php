@@ -105,11 +105,13 @@ if (strlen($_SESSION['login']) == 0) {
                                                 </thead>
                                                 <tbody>
                                                 <?php
+                                                    $count = 1;
                                                     foreach ($comments as $comment) {
+                                                        
                                                     ?>
 
                                                         <tr>
-                                                            <th scope="row"><?=$comment['postid']?></th>
+                                                            <th scope="row"><?=$count?></th>
                                                             <td><?=$comment['name'] ?></td>
                                                             <td><?=$comment['email'] ?></td>
                                                             <td><?=$comment['comment']?></td>
@@ -132,6 +134,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                                         <a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                         </tr>
                                                     <?php
+                                                    $count++;
                                                     } ?>
                                                 </tbody>
 

@@ -69,8 +69,8 @@
             $result = mysqli_query($this->conn, $query);
         }
 
-        function AddCategory($categoryName, $description, $status) {
-            $query = "INSERT INTO tblcategory(CategoryName,Description,Is_Active) VALUES ('$categoryName','$description','$status')";
+        function AddCategory($categoryName, $description, $status, $PostingDate) {
+            $query = "INSERT INTO tblcategory(CategoryName,PostingDate,Description,Is_Active) VALUES ('$categoryName','$PostingDate','$description','$status')";
             $result = mysqli_query($this->conn, $query);
         }
 

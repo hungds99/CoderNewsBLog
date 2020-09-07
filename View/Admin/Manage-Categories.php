@@ -99,10 +99,11 @@ if (strlen($_SESSION['login']) == 0) {
                                                 </thead>
                                                 <tbody>
                                                     <?php
+                                                    $count = 1;
                                                     foreach ($categories as $category) {
                                                     ?>
                                                         <tr>
-                                                            <th scope="row"><?=$category->id?></th>
+                                                            <th scope="row"><?=$count?></th>
                                                             <td><?=$category->CategoryName?></td>
                                                             <td><?=$category->Description?></td>
                                                             <td><?=$category->PostingDate?></td>
@@ -118,6 +119,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                             </td>
                                                         </tr>
                                                     <?php
+                                                     $count++;
                                                     } ?>
                                                 </tbody>
 
@@ -152,10 +154,11 @@ if (strlen($_SESSION['login']) == 0) {
                                                 </thead>
                                                 <tbody>
                                                     <?php
+                                                     $count_t = 1;
                                                     foreach ($categoriesdel as $categorydel) {
                                                     ?>
                                                         <tr>
-                                                            <th scope="row"><?=$categorydel->id?></th>
+                                                            <th scope="row"><?=$count_t?></th>
                                                             <td><?=$categorydel->CategoryName?></td>
                                                             <td><?=$categorydel->Description?></td>
                                                             <td><?=$categorydel->PostingDate?></td>
@@ -171,6 +174,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                             </td>
                                                         </tr>
                                                     <?php
+                                                    $count_t++;
                                                     } ?>
                                                 </tbody>
                                             </table>

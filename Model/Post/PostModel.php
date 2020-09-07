@@ -25,7 +25,7 @@
         }
 
         function GetPosts() {
-            $query = "SELECT tblposts.id As postid,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1";
+            $query = "SELECT tblposts.id As postid, tblposts.PostingDate, tblposts.UpdationDate , tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -53,13 +53,13 @@
             $result = mysqli_query($this->conn, $query);
         }
 
-        function UpdatePost($posttitle, $catid, $postdetails, $url, $status, $postid) {
-            $query = "UPDATE tblposts SET PostTitle='$posttitle',CategoryId='$catid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status' where id='$postid'";
+        function UpdatePost($posttitle, $catid, $postdetails, $url, $status, $postid, $UpdationDate) {
+            $query = "UPDATE tblposts SET PostTitle='$posttitle',CategoryId='$catid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status',UpdationDate='$UpdationDate' where id='$postid'";
             $result = mysqli_query($this->conn, $query);
         }
 
-        function AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile) {
-            $query = "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values(n'$posttitle','$catid','$postdetails','$url','$status','$imgnewfile')";
+        function AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile, $PostingDate) {
+            $query = "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage, PostingDate) values(n'$posttitle','$catid','$postdetails','$url','$status','$imgnewfile','$PostingDate')";
             $result = mysqli_query($this->conn, $query);
             if($result) {
                 return 1;
@@ -69,7 +69,7 @@
         }
 
         function GetTrashPosts() {
-            $query = "SELECT tblposts.id As postid,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=0";
+            $query = "SELECT tblposts.id As postid,tblposts.PostingDate, tblposts.UpdationDate,tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=0";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -106,8 +106,8 @@
             return $result->fetch_all(1);
         }
 
-        function GetPostBySearch($search) {
-            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6";
+        function GetPostBySearch($search, $offset) {
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -141,6 +141,13 @@
 
         function GetLastPageNumber($categoryId){
             $query = "SELECT count(id) FROM tblposts WHERE CategoryId = '$categoryId'";
+            $result = mysqli_query($this->conn, $query);
+            $lastPageNumber = $result->fetch_all()[0][0];
+            return ceil($lastPageNumber/4);
+        }
+
+        function GetLastPageNumberBySearch($search){
+            $query = "SELECT count(id) FROM tblposts WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             $lastPageNumber = $result->fetch_all()[0][0];
             return ceil($lastPageNumber/4);

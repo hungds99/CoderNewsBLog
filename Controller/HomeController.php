@@ -19,7 +19,15 @@
         function Index() {
             if (isset($_GET['q'])) {
                 $search = $_GET['q'];
-                $posts = $this->postModel->GetPostBySearch($search);
+
+                $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
+
+                $offset = $currentPage*6 - 6;
+
+                $lastPageNumber = $this->postModel->GetLastPageNumberBySearch($search);
+
+                $posts = $this->postModel->GetPostBySearch($search, $offset);
+
                 $postlst = $this->postModel->GetPostLastestBySearch($search);
                 $categories = $this->categoryModel->GetCategories();
                 require_once SYSTEM_PATH."/View/Home/Post-Category.php";
@@ -59,13 +67,13 @@
             if (isset($_GET['id'])) {
 
                 $category_id = intval($_GET['id']);
-                $currentPage = empty($_GET["page"])? 1:$_GET["page"];
+                $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
 
                 $offset = 4*$currentPage-4;
 
                 $lastPageNumber = $this->postModel->GetLastPageNumber($category_id);
                 
-                $posts = $this->postModel->GetPostByCategory($category_id,$offset);
+                $posts = $this->postModel->GetPostByCategory($category_id, $offset);
                 $postlst = $this->postModel->GetPostLastestByCategory($category_id);
                 require_once SYSTEM_PATH."/View/Home/Post-Category.php";
             }
@@ -74,7 +82,7 @@
         function ViewPost() {
             if (isset($_GET['id'])) {
                 $post_id = intval($_GET['id']);
-                
+
                 // Cập nhật số lượng lượt xem
                 // Cập nhập trước rồi mới load ra
                 $this->postModel->UpdateCountView($post_id);

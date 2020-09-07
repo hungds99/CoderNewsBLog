@@ -67,7 +67,10 @@
                     $status = 1;
                     $postid = intval($_GET['id']);
 
-                    $this->postModel->UpdatePost($posttitle, $catid, $postdetails, $url, $status, $postid);
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $UpdationDate = date('Y-m-d H:i:s');
+
+                    $this->postModel->UpdatePost($posttitle, $catid, $postdetails, $url, $status, $postid, $UpdationDate);
 
                     header("location: index.php?c=Post&a=Edit&id=$postid&s=true");
             }
@@ -100,7 +103,9 @@
                     move_uploaded_file($_FILES["postimage"]["tmp_name"], "Vendor/images/posts/" . $imgnewfile);
 
                     $status = 1;
-                    $result = $this->postModel->AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile);
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $PostingDate = date('Y-m-d H:i:s');
+                    $result = $this->postModel->AddPost($posttitle, $catid, $postdetails, $url, $status, $imgnewfile,$PostingDate);
                     
                     if ($result == 1) {
                         header("location: index.php?c=Post&a=Add&s=true");

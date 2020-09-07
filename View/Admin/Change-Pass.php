@@ -23,19 +23,19 @@ if (strlen($_SESSION['login']) == 0) {
         <script type="text/javascript">
             function valid() {
                 if (document.chngpwd.password.value == "") {
-                    alert("Current Password Filed is Empty !!");
+                    alert("Mật khẩu hiện tại rỗng !!");
                     document.chngpwd.password.focus();
                     return false;
                 } else if (document.chngpwd.newpassword.value == "") {
-                    alert("New Password Filed is Empty !!");
+                    alert("Mật khẩu mới rỗng !!");
                     document.chngpwd.newpassword.focus();
                     return false;
                 } else if (document.chngpwd.confirmpassword.value == "") {
-                    alert("Confirm Password Filed is Empty !!");
+                    alert("Xác nhận mật khẩu rỗng !!");
                     document.chngpwd.confirmpassword.focus();
                     return false;
                 } else if (document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value) {
-                    alert("Password and Confirm Password Field do not match  !!");
+                    alert("Mật khẩu không trùng nhau !!");
                     document.chngpwd.confirmpassword.focus();
                     return false;
                 }

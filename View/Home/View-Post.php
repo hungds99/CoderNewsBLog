@@ -43,7 +43,7 @@
                                 <span><i class="fas fa-eye"></i> <?=$p["CountView"]?></span>
                             </p>
                             <p class="post-author"> <span><i class="fas fa-at"></i></span> Admin</p>
-                            <img src="Vendor/images/posts/<?=$p["PostImage"]?>" class="post-img" alt="" srcset="">
+                            <img src="Vendor/images/posts/<?=$p["PostImage"]?>" class="post-img" alt="" srcset="" style="width: 100%; height: 100%;">
                             <p class="post-text">
                                 <?=$p["PostDetails"]?>
                             </p>

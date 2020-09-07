@@ -56,7 +56,11 @@
                 $categoryName = $_POST['category'];
                 $description = $_POST['description'];
                 $status = 1;
-                $this->categoryModel->AddCategory($categoryName, $description, $status);
+
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $PostingDate = date('Y-m-d H:i:s');
+                
+                $this->categoryModel->AddCategory($categoryName, $description, $status, $PostingDate);
                 header("location: index.php?c=Category&a=Add&s=true");
             }
         }

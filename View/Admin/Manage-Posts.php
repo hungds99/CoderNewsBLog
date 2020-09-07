@@ -104,23 +104,31 @@ if (strlen($_SESSION['login']) == 0) {
                                         <table class="table table-colored table-centered table-inverse m-0">
                                             <thead>
                                                 <tr>
-
+                                                    <th>STT</th>
                                                     <th>Tiêu đề</th>
                                                     <th>Danh mục</th>
+                                                    <th>Ngày tạo</th>
+                                                    <th>Ngày sửa</th>
                                                     <th>Thao tác</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                     <?php
+                                                        $count = 1;
                                                         foreach ($posts as $post) {
                                                     ?>
                                                         <tr>
+                                                            <td><?=$count?></td>
                                                             <td><b><?=$post['title']?></b></td>
                                                             <td><?=$post['category']?></td>
+                                                            <td><?=$post['PostingDate']?></td>
+                                                            <td><?=$post['UpdationDate']?></td>
                                                             <td><a href="index.php?c=Post&a=Edit&id=<?=$post['postid']?>"><i class="fa fa-pencil" style="color: #29b6f6;" title="Sửa bài viết"></i></a>
                                                                 &nbsp;<a href="index.php?c=Post&a=Del&id=<?=$post['postid']?>" onclick="return confirm('Bạn có muốn xóa bài viết ?')"> <i class="fa fa-trash-o" style="color: #f05050" title="Xóa bài viết"></i></a> </td>
                                                         </tr>
-                                                     <?php }
+                                                     <?php
+                                                        $count++; 
+                                                     }
                                                     ?>
 
                                             </tbody>
