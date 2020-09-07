@@ -19,10 +19,18 @@
         function Index() {
             if (isset($_GET['q'])) {
                 $search = $_GET['q'];
-                $posts = $this->postModel->GetPostBySearch($search);
+                $currentPage = empty($_GET["page"])? 1:$_GET["page"];
+
+                $offset = 4*$currentPage-4;
+
+                $lastPageNumber = $this->postModel->GetLastPageNumberBySearch($search);
+                
+
+                
+                $posts = $this->postModel->GetPostBySearch($search,$offset);
                 $postlst = $this->postModel->GetPostLastestBySearch($search);
                 $categories = $this->categoryModel->GetCategories();
-                require_once SYSTEM_PATH."/View/Home/Post-Category.php";
+                require_once SYSTEM_PATH."/View/Home/Post-Search.php";
             } else {
                 $categories = $this->categoryModel->GetCategories();
 
