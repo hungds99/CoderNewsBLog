@@ -106,12 +106,18 @@
             return $result->fetch_all(1);
         }
 
-        function GetPostBySearch($search) {
-            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 6";
+        function GetPostBySearch($search,$offset) {
+            $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 LIMIT 4 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
+        function GetLastPageNumberBySearch($search){
+            $query = "SELECT count(id) FROM tblposts WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1";
+            $result = mysqli_query($this->conn, $query);
+            $lastPageNumber = $result->fetch_all()[0][0];
+            return ceil($lastPageNumber/4);
 
+        }
         function GetPostLastestBySearch($search) {
             $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1 ORDER BY tblposts.PostingDate DESC LIMIT 3";
             $result = mysqli_query($this->conn, $query);
