@@ -38,8 +38,12 @@
         function ForceDel() {
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
-                $this->categoryModel->ForceDeleteCategory($id);
-                header("location: index.php?c=Category&a=Manage&s=true");
+                $result = $this->categoryModel->ForceDeleteCategory($id);
+                if($result == 1) {
+                    header("location: index.php?c=Category&a=Manage&s=true");
+                } else {
+                    header("location: index.php?c=Category&a=Manage&e=true");
+                }
             }
         }
 

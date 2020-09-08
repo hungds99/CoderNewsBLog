@@ -14,7 +14,13 @@
         }
 
         function Manage() {
-            $posts = $this->postModel->GetPosts();
+            $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
+
+            $offset = $currentPage*10 - 10;
+
+            $lastPageNumber = ceil($this->postModel->PostCount() / 10);
+
+            $posts = $this->postModel->GetPosts($offset);
             require_once SYSTEM_PATH."/View/Admin/Manage-Posts.php";
         }
 
@@ -42,8 +48,12 @@
         function ForceDel() {
             if(isset($_GET['id'])) {
                 $id = intval($_GET['id']);
-                $this->postModel->ForceDeletePost($id);
-                header("location: index.php?c=Post&a=Trash&s=true");
+                $result = $this->postModel->ForceDeletePost($id);
+                if($result == 1) {
+                    header("location: index.php?c=Post&a=Trash&s=true");
+                } else {
+                    header("location: index.php?c=Post&a=Trash&e=true");
+                }
             }
         }
 

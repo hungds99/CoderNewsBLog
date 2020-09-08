@@ -84,9 +84,9 @@ if (strlen($_SESSION['login']) == 0) {
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
-                                <div class="row">
+                                    <div class="row">
                                         <div class="col-sm-6">
-                                        <?php if (isset($_GET['s'])) { ?>
+                                            <?php if (isset($_GET['s'])) { ?>
                                                 <div class="alert alert-success" role="alert">
                                                     <strong>Thao tác thành công !</strong> 
                                                 </div>
@@ -98,6 +98,12 @@ if (strlen($_SESSION['login']) == 0) {
                                                 </div>
                                             <?php } ?>
                                         </div>
+                                    </div>
+
+                                    <div class="m-b-30">
+                                        <a href="index.php?c=Post&a=Add">
+                                            <button id="addToTable" class="btn btn-success waves-effect waves-light">Thêm <i class="mdi mdi-plus-circle-outline"></i></button>
+                                        </a>
                                     </div>
 
                                     <div class="table-responsive">
@@ -133,6 +139,51 @@ if (strlen($_SESSION['login']) == 0) {
 
                                             </tbody>
                                         </table>
+                                        <style>
+                                            .pagination {
+                                                width: 100%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                
+                                            }
+                                            .pageNav-main{
+                                            
+                                                display: flex;
+                                            }
+                                            .pageNav-main li {
+                                                list-style-type: none;
+                                            }
+                                            .pageNav-main a{
+                                                color: #23497c;
+                                                background: linear-gradient(0deg, #dce7f5, #e7ebef);
+                                                padding: 5px 12px;
+                                                border: 1px solid #cbcdd0;
+                                                cursor: pointer;
+                                                margin: 3px;
+                                            }
+                                            .pageNav-main .currentPage{
+                                                background: #ffe0cc;
+                                                color: #f60;
+                                                border: 1px solid #ffba8c;
+                                            }
+                                            .pageNav-main a:hover{
+                                                background: #a1c4fd;
+                                            }
+                                            .pageNav-main .currentPage:hover {
+                                                background: #f3ceb6;
+                                            }
+                                        </style>
+
+                                        <div class="pagination">
+                                            <ul class="pageNav-main">
+                                                <li> <a href="index.php?c=Post&a=Manage&page=1">First</a></li>
+                                                <li> <a href="index.php?c=Post&a=Manage&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="mdi mdi-chevron-left"></i></a></li>
+                                                <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
+                                                <li> <a href="index.php?c=Post&a=Manage&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="mdi mdi-chevron-right"></i></a></li>
+                                                <li> <a href="index.php?c=Post&a=Manage&page=<?=$lastPageNumber?>">Last</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

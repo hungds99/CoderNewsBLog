@@ -56,6 +56,11 @@
         function ForceDeleteCategory($id) {
             $query = "DELETE FROM tblcategory WHERE id='$id'";
             $result = mysqli_query($this->conn, $query);
+            if($result) {
+                return 1;
+            }
+            return 2;
+            
         }
 
         function GetCategory($id) {

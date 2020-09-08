@@ -23,13 +23,22 @@
            
     <div class="main-content">
     	<div class="container-fluid">
-    		
+        
             <?php
+                if(count($posts) == 0) {
+            ?>
+                <div class="row ">
+                    <div class="col col-lg-12 ">
+                        <h3>Không thấy kết quả tìm kiếm: <?=$_GET['q']?> </h3>
+                    </div>
+                </div>
+            <?php
+                } else {
                 if (isset($_GET['q'])) {
             ?>
             <div class="row ">
                 <div class="col col-lg-12 ">
-                    <h3>Kết quả </h3>
+                    <h3>Kết quả tìm kiếm: <?=$_GET['q']?></h3>
                 </div>
             </div>
             <?php
@@ -101,6 +110,10 @@
                 </div>
                 <!-- end postitem -->
             </div>
+            <?php   
+                }
+            ?>
+    
     		
     	</div>
 

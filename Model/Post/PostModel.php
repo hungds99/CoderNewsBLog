@@ -24,8 +24,8 @@
             return $countpostsdel;
         }
 
-        function GetPosts() {
-            $query = "SELECT tblposts.id As postid, tblposts.PostingDate, tblposts.UpdationDate , tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1";
+        function GetPosts($offset) {
+            $query = "SELECT tblposts.id As postid, tblposts.PostingDate, tblposts.UpdationDate , tblposts.PostTitle As title,tblcategory.CategoryName As category FROM tblposts LEFT JOIN tblcategory ON tblcategory.id=tblposts.CategoryId WHERE tblposts.Is_Active=1 LIMIT 10 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
@@ -82,6 +82,10 @@
         function ForceDeletePost($postid) {
             $query = "DELETE FROM tblposts WHERE id='$postid'";
             $result = mysqli_query($this->conn, $query);
+            if($result) {
+                return 1;
+            }
+            return 2;
         }
 
         function GetImage($postid) {
@@ -150,6 +154,6 @@
             $query = "SELECT count(id) FROM tblposts WHERE tblposts.PostTitle LIKE '%$search%' AND tblposts.Is_Active=1";
             $result = mysqli_query($this->conn, $query);
             $lastPageNumber = $result->fetch_all()[0][0];
-            return ceil($lastPageNumber/4);
+            return ceil($lastPageNumber/6);
         }
     }

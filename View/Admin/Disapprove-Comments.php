@@ -98,7 +98,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                         <th>Email</th>
                                                         <th width="300">Bình luận</th>
                                                         <th>Trạng thái</th>
-                                                        <th>Bài viết / News</th>
+                                                        <th>Bài viết</th>
                                                         <th>Ngày đăng</th>
                                                         <th>Action</th>
                                                     </tr>
