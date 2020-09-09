@@ -23,7 +23,16 @@
 
                 header("location: index.php?c=Comment&a=Disapprove&s=true");
             } else {
-                $comments = $this->commentModel->GetApproveComments();
+                $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
+                $offset = $currentPage*10 - 10;
+                $postTitle = "";
+                if(isset($_POST['search'])) {
+                    $postTitle = $_POST['search'];
+                    $lastPageNumber = ceil($this->commentModel->GetApproveCommentsCountSearch($postTitle) / 10);
+                } else {
+                    $lastPageNumber = ceil($this->commentModel->GetApproveCommentsCount() / 10);
+                }
+                $comments = $this->commentModel->GetApproveComments($offset,$postTitle);
                 require_once SYSTEM_PATH."/View/Admin/Manage-Comments.php";
             }
         }
@@ -39,7 +48,16 @@
 
                 header("location: index.php?c=Comment&a=Approve&s=true");
             } else {
-                $comments = $this->commentModel->GetDisApproveComments();
+                $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
+                $offset = $currentPage*10 - 10;
+                $postTitle = "";
+                if(isset($_POST['search'])) {
+                    $postTitle = $_POST['search'];
+                    $lastPageNumber = ceil($this->commentModel->GetDisApproveCommentsCountSearch($postTitle) / 10);
+                } else {
+                    $lastPageNumber = ceil($this->commentModel->GetDisApproveCommentsCount() / 10);
+                }
+                $comments = $this->commentModel->GetDisApproveComments($offset,$postTitle);
                 require_once SYSTEM_PATH."/View/Admin/Disapprove-Comments.php";
             }
         }

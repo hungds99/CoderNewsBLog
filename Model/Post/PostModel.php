@@ -156,4 +156,25 @@
             $lastPageNumber = $result->fetch_all()[0][0];
             return ceil($lastPageNumber/6);
         }
+        
+        function GetPostsByCategoryAndSearch($catid, $query, $offset){
+            if($catid != '') {
+                $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.UpdationDate, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$query%' AND tblposts.CategoryId = '$catid' AND tblposts.Is_Active=1 LIMIT 10 offset $offset";
+            } else {
+                $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.UpdationDate, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$query%' AND tblposts.Is_Active=1 LIMIT 10 offset $offset";
+            }
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function PostCountBySearch($catid, $query) {
+            if($catid != '') {
+                $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$query%' AND tblposts.CategoryId = '$catid' AND tblposts.Is_Active=1";
+            } else {
+                $query = "SELECT tblposts.id as postid, tblposts.CountView, tblposts.CountComment, tblposts.PostingDate,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId WHERE tblposts.PostTitle LIKE '%$query%' AND tblposts.Is_Active=1";
+            }
+            $result = mysqli_query($this->conn, $query);
+            $countposts = mysqli_num_rows($result);
+            return $countposts;
+        }
     }

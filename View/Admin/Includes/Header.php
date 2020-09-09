@@ -1,3 +1,38 @@
+<style>
+    .pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .pageNav-main{
+
+        display: flex;
+    }
+    .pageNav-main li {
+        list-style-type: none;
+    }
+    .pageNav-main a{
+        color: #23497c;
+        background: linear-gradient(0deg, #dce7f5, #e7ebef);
+        padding: 5px 12px;
+        border: 1px solid #cbcdd0;
+        cursor: pointer;
+        margin: 3px;
+    }
+    .pageNav-main .currentPage{
+        background: #ffe0cc;
+        color: #f60;
+        border: 1px solid #ffba8c;
+    }
+    .pageNav-main a:hover{
+        background: #a1c4fd;
+    }
+    .pageNav-main .currentPage:hover {
+        background: #f3ceb6;
+    }
+</style>
 <div class="topbar">
 
     <!-- LOGO -->

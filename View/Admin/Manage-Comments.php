@@ -51,10 +51,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Quản lý bình luận đã xác nhận</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="#">Bình luận</a>
+                                            <a href="index.php?c=Comment&a=Approve">Bình luận</a>
                                         </li>
                                         <li class="active">
                                             Bình luận đã xác nhận
@@ -84,7 +84,20 @@ if (strlen($_SESSION['login']) == 0) {
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="demo-box m-t-20">
+                                    <div class="demo-box m-t-5">
+
+                                        <div class="row m-b-20">
+                                            <div class="col-sm-9"></div>
+                                            
+                                            <form action="index.php?c=Comment&a=Approve" method="POST" name="searchForm">
+                                                <div class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="Nhập tìm kiếm" name="search">
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <input type="submit" class="form-control btn btn-primary" value="Tìm">
+                                                </div>
+                                            </form>
+                                        </div>
 
                                         <div class="table-responsive">
                                             <table class="table m-0 table-colored-bordered table-bordered-primary">
@@ -102,8 +115,15 @@ if (strlen($_SESSION['login']) == 0) {
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                     $count = 1;
-                                                    foreach ($comments as $comment) {
+                                                        if(count($comments) == 0) {
+                                                    ?>
+                                                     <tr class="text-center">
+                                                            <td colspan="8">Không tồn tại kết quả tìm kiếm ...</td>
+                                                        </tr>
+                                                    <?php
+                                                        }else{ 
+                                                        $count = 1;
+                                                        foreach ($comments as $comment) {
                                                     ?>
 
                                                         <tr>
@@ -131,14 +151,26 @@ if (strlen($_SESSION['login']) == 0) {
                                                         </tr>
                                                     <?php
                                                     $count++;
-                                                    } ?>
+                                                    } }?>
                                                 </tbody>
 
                                             </table>
+                                            <?php
+                                                if(count($comments) > 0) {
+                                            ?>
+                                                <div class="pagination">
+                                                    <ul class="pageNav-main">
+                                                        <li> <a href="index.php?c=Comment&a=Approve&page=1">First</a></li>
+                                                        <li> <a href="index.php?c=Comment&a=Approve&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="mdi mdi-chevron-left"></i></a></li>
+                                                        <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
+                                                        <li> <a href="index.php?c=Comment&a=Approve&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="mdi mdi-chevron-right"></i></a></li>
+                                                        <li> <a href="index.php?c=Comment&a=Approve&page=<?=$lastPageNumber?>">Last</a></li>
+                                                    </ul>
+                                                </div>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
-
-
-
 
                                     </div>
 

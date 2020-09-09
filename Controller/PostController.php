@@ -17,10 +17,17 @@
             $currentPage = empty($_GET["page"]) ? 1 : $_GET["page"];
 
             $offset = $currentPage*10 - 10;
-
-            $lastPageNumber = ceil($this->postModel->PostCount() / 10);
-
-            $posts = $this->postModel->GetPosts($offset);
+            $categories = $this->categoryModel->GetCategories();
+            if(isset($_POST['category']) || isset($_POST['search'])) {
+                $catid = $_POST['category'];
+                $query = $_POST['search'];  
+                $lastPageNumber = ceil($this->postModel->PostCountBySearch($catid, $query) / 10);
+                $posts = $this->postModel->GetPostsByCategoryAndSearch($catid, $query, $offset);
+            } else {
+                $lastPageNumber = ceil($this->postModel->PostCount() / 10);
+                $posts = $this->postModel->GetPosts($offset);
+            }
+            
             require_once SYSTEM_PATH."/View/Admin/Manage-Posts.php";
         }
 

@@ -10,16 +10,40 @@
             $this->conn = OpenCon();
         }
 
-        function GetApproveComments() {
-            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=1";
+        function GetApproveComments($offset,$post) {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=1 AND tblposts.PostTitle LIKE '%$post%' LIMIT 10 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
         }
 
-        function GetDisApproveComments() {
-            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=0";
+        function GetApproveCommentsCount() {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=1";
+            $result = mysqli_query($this->conn, $query);
+            return mysqli_num_rows($result);
+        }
+
+        function GetApproveCommentsCountSearch($post) {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=1 AND tblposts.PostTitle LIKE '%$post%'";
+            $result = mysqli_query($this->conn, $query);
+            return mysqli_num_rows($result);
+        }
+
+        function GetDisApproveComments($offset, $post) {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=0 AND tblposts.PostTitle LIKE '%$post%' LIMIT 10 offset $offset";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1);
+        }
+
+        function GetDisApproveCommentsCount() {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=0";
+            $result = mysqli_query($this->conn, $query);
+            return mysqli_num_rows($result);
+        }
+
+        function GetDisApproveCommentsCountSearch($post){
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId WHERE tblcomments.status=0 AND tblposts.PostTitle LIKE '%$post%'";
+            $result = mysqli_query($this->conn, $query);
+            return mysqli_num_rows($result);
         }
         
         function DeleteComment($id) {
@@ -57,5 +81,17 @@
             $query = "SELECT postId from tblcomments where id = '$id'";
             $result = mysqli_query($this->conn, $query);
             return $result->fetch_all(1)[0];
+        }
+
+        function GetCommentsApproveByPostTitle($post) {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId AND tblposts.PostTitle LIKE '%$post%' WHERE tblcomments.status=1";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
+        }
+
+        function GetCommentsDisApproveByPostTitle($post) {
+            $query = "SELECT tblcomments.id, tblcomments.name,tblcomments.email,tblcomments.postingDate,tblcomments.comment,tblposts.id as postid,tblposts.PostTitle,tblcomments.status  FROM  tblcomments JOIN tblposts ON tblposts.id=tblcomments.postId AND tblposts.PostTitle LIKE '%$post%' WHERE tblcomments.status=0";
+            $result = mysqli_query($this->conn, $query);
+            return $result->fetch_all(1);
         }
     }

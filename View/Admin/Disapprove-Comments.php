@@ -51,10 +51,10 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Quản lý bình luận chưa xác nhận</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Bảng điều khiển</a>
+                                            <a href="index.php?c=Dashboard&a=Home">Bảng điều khiển</a>
                                         </li>
                                         <li>
-                                            <a href="#">Bình luận</a>
+                                            <a href="index.php?c=Comment&a=Disapprove">Bình luận</a>
                                         </li>
                                         <li class="active">
                                             Bình luận chưa xác nhận
@@ -89,6 +89,19 @@ if (strlen($_SESSION['login']) == 0) {
                                 <div class="col-md-12">
                                     <div class="demo-box m-t-20">
 
+                                        <div class="row m-b-20">
+                                            <div class="col-sm-9"></div>
+                                            
+                                            <form action="index.php?c=Comment&a=Disapprove" method="POST" name="searchForm">
+                                                <div class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="Nhập tìm kiếm" name="search">
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <input type="submit" class="form-control btn btn-primary" value="Tìm">
+                                                </div>
+                                            </form>
+                                        </div>
+
                                         <div class="table-responsive">
                                             <table class="table m-0 table-colored-bordered table-bordered-primary">
                                                 <thead>
@@ -104,46 +117,62 @@ if (strlen($_SESSION['login']) == 0) {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <?php
-                                                    $count = 1;
-                                                    foreach ($comments as $comment) {
-                                                        
+                                                    <?php
+                                                        if(count($comments) == 0) {
                                                     ?>
-
-                                                        <tr>
-                                                            <th scope="row"><?=$count?></th>
-                                                            <td><?=$comment['name'] ?></td>
-                                                            <td><?=$comment['email'] ?></td>
-                                                            <td><?=$comment['comment']?></td>
-                                                            <td><?php $st = $comment['status'];
-                                                                if ($st == '0') :
-                                                                    echo "Wating for approval";
-                                                                else :
-                                                                    echo "Approved";
-                                                                endif;
-                                                                ?></td>
-                                                            <td><a href="index.php?c=Post&a=Edit&id=<?=$comment['postid']?>"><?=$comment['PostTitle']?></a> </td>
-                                                            <td><?=$comment['postingDate']?></td>
-                                                            <td>
-                                                                <?php if ($st == 0) : ?>
-                                                                        <a href="index.php?c=Comment&a=Approve&id=<?=$comment['id']?>" title="Xác thực bình luận" onclick="return confirm('Bạn có muốn xác thực bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
-                                                                    <?php else : ?>
-                                                                        <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Hủy bình luận" onclick="return confirm('Bạn có muốn hủy bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
-                                                                <?php endif; ?>
-                                                                    &nbsp;
-                                                                        <a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                        <tr class="text-center">
+                                                            <td colspan="8">Không tồn tại kết quả tìm kiếm ...</td>
                                                         </tr>
                                                     <?php
-                                                    $count++;
-                                                    } ?>
+                                                    } else {
+                                                        $count = 1;
+                                                        foreach ($comments as $comment) {
+                                                        ?>
+                                                            <tr>
+                                                                <th scope="row"><?=$count?></th>
+                                                                <td><?=$comment['name'] ?></td>
+                                                                <td><?=$comment['email'] ?></td>
+                                                                <td><?=$comment['comment']?></td>
+                                                                <td><?php $st = $comment['status'];
+                                                                    if ($st == '0') :
+                                                                        echo "Wating for approval";
+                                                                    else :
+                                                                        echo "Approved";
+                                                                    endif;
+                                                                    ?></td>
+                                                                <td><a href="index.php?c=Post&a=Edit&id=<?=$comment['postid']?>"><?=$comment['PostTitle']?></a> </td>
+                                                                <td><?=$comment['postingDate']?></td>
+                                                                <td>
+                                                                    <?php if ($st == 0) : ?>
+                                                                            <a href="index.php?c=Comment&a=Approve&id=<?=$comment['id']?>" title="Xác thực bình luận" onclick="return confirm('Bạn có muốn xác thực bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
+                                                                        <?php else : ?>
+                                                                            <a href="index.php?c=Comment&a=Disapprove&id=<?=$comment['id']?>" title="Hủy bình luận" onclick="return confirm('Bạn có muốn hủy bình luận không ?')"><i class="ion-arrow-return-right" style="color: #29b6f6;"></i></a>
+                                                                    <?php endif; ?>
+                                                                        &nbsp;
+                                                                            <a href="index.php?c=Comment&a=Del&id=<?=$comment['id']?>" title="Xóa bình luận" onclick="return confirm('Bạn có muốn xóa bình luận không ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                            </tr>
+                                                        <?php
+                                                        $count++;
+                                                        } }?>
                                                 </tbody>
 
                                             </table>
                                         </div>
-
-
-
-
+                                        <?php
+                                            if(count($comments) > 0) {
+                                        ?>
+                                            <div class="pagination">
+                                                <ul class="pageNav-main">
+                                                    <li> <a href="index.php?c=Comment&a=Disapprove&page=1">First</a></li>
+                                                    <li> <a href="index.php?c=Comment&a=Disapprove&page=<?=$currentPage-1?>" <?= ($currentPage==1)?'style="pointer-events:none"':'' ?> ><i class="mdi mdi-chevron-left"></i></a></li>
+                                                    <li> <a href="" class="currentPage"><?=$currentPage?></a></li>
+                                                    <li> <a href="index.php?c=Comment&a=Disapprove&page=<?=$currentPage+1?>" <?= ($currentPage==$lastPageNumber)?'style="pointer-events:none"':'' ?>><i class="mdi mdi-chevron-right"></i></a></li>
+                                                    <li> <a href="index.php?c=Comment&a=Disapprove&page=<?=$lastPageNumber?>">Last</a></li>
+                                                </ul>
+                                            </div>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
 
                                 </div>
